@@ -13,7 +13,7 @@ import { BiMenu } from "react-icons/bi";
 export default function nav() {
   return (
     <Flex
-      zIndex={2}
+      zIndex={1}
       justify={"space-between"}
       position="fixed"
       width="100%"
@@ -24,11 +24,7 @@ export default function nav() {
       <Heading>Travel</Heading>
       <Flex>
         <Menu>
-          <MenuButton
-            bgColor="whiteAlpha.100"
-            _hover={{ bgColor: "whiteAlpa.100" }}
-            as={IconButton}
-          >
+          <MenuButton _hover={{ bgColor: "whiteAlpa.100" }} as={IconButton}>
             <Icon boxSize={6} as={BiMenu} />
           </MenuButton>
           <MenuList>

@@ -4,11 +4,11 @@ import React from "react";
 
 export default function main({ children }) {
   return (
-    <Box as="main" height="100vh">
+    <Box as="main" minheight="100vh">
       <Head>
         <meta content="width=device-width, inital-scale=1" />
       </Head>
-      <Box>{children}</Box>
+      <Box maxWidth="100%">{children}</Box>
     </Box>
   );
 }
