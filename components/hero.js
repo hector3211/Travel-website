@@ -11,7 +11,7 @@ import {
 
 export default function hero() {
   return (
-    <Box bgColor="red" position="relative" width="100%">
+    <Box bgColor="red" position="relative">
       <Box
         position="absolute"
         top={0}
@@ -28,32 +28,34 @@ export default function hero() {
       />
       <Flex
         flexShrink={1}
-        width={{ base: "100%", md: "45%", lg: "25%" }}
+        minWidth={{ base: "100%", md: "45%", lg: "30%" }}
         position="absolute"
         direction="column"
         justify="space-evenly"
-        left={{ base: 0, md: "25%", lg: "38%" }}
-        top="25rem"
+        left={{ base: 0, md: "25%", lg: "5%" }}
+        top="10rem"
       >
-        <Flex align="center" justify="center">
-          <Text fontSize="2xl" fontWeight="semibold">
-            Travel
-          </Text>
-          <Text ml={1}>Agency</Text>
-        </Flex>
         <Box
-          w="100%"
+          minHeight={"10rem"}
           p={5}
           backdropFilter="auto"
-          backdropBlur="4px"
+          backdropBlur="8px"
           border="1px solid white"
           rounded={5}
         >
-          <FormControl>
-            <FormLabel htmlFor="email">Email address</FormLabel>
+          <FormControl minHeight={"30rem"} p={5}>
+            <FormLabel mt={"13rem"} htmlFor="email">
+              Email address
+            </FormLabel>
             <Input id="email" type="email" />
+            <FormLabel mt={3} htmlFor="password">
+              Password
+            </FormLabel>
+            <Input id="password" type="password" />
             <Center>
-              <Button mt={5}>Submit</Button>
+              <Button size="lg" mt={5}>
+                Submit
+              </Button>
             </Center>
           </FormControl>
         </Box>

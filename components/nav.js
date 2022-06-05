@@ -24,10 +24,14 @@ export default function nav() {
       <Heading>Travel</Heading>
       <Flex>
         <Menu>
-          <MenuButton _hover={{ bgColor: "whiteAlpa.100" }} as={IconButton}>
+          <MenuButton
+            bgColor={"whiteAlpha.100"}
+            _hover={{ bgColor: "whiteAlpa.100" }}
+            as={IconButton}
+          >
             <Icon boxSize={6} as={BiMenu} />
           </MenuButton>
-          <MenuList>
+          <MenuList bgColor={"whiteAlpha.200"}>
             <MenuItem>Home</MenuItem>
             <MenuItem>About</MenuItem>
             <MenuItem>Packages</MenuItem>
