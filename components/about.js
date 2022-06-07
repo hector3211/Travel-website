@@ -18,21 +18,23 @@ export default function about() {
         <Image
           rounded={20}
           alt="about picture one"
-          objectFit={"contain"}
+          objectFit={"cover"}
           src="/images/gridthree.jpg"
-          width="500px"
+          height="300px"
+          minW="100%"
         />
 
         <Image
           rounded={20}
           alt="about picture two"
-          objectFit={"contain"}
-          src="/images/gridfive.jpg"
-          width="500px"
+          objectFit={"cover"}
+          src="/images/gridsix.jpg"
+          height="300px"
+          minWidth="100%"
         />
       </SimpleGrid>
       <Container>
-        <Flex justify="start">
+        <Flex justify="start" direction={"column"}>
           <Text>About Us</Text>
           <Text>Lorem text</Text>
         </Flex>

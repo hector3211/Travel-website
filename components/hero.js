@@ -27,13 +27,13 @@ export default function hero() {
       />
       <Flex
         flexShrink={1}
-        minWidth={{ base: "100%", md: "45%", lg: "30%" }}
+        minWidth={{ base: "80%", md: "75%", lg: "30%" }}
         position="absolute"
         direction="column"
         align="center"
-        left={{ base: 0, md: "25%", lg: "5%" }}
-        top="15rem"
-        maxHeight={"25rem"}
+        left={{ base: "9%", md: "12%", lg: "5%" }}
+        top="18rem"
+        maxHeight={{ base: "20rem", md: "25rem" }}
         p={{ md: 5 }}
         backdropFilter="auto"
         backdropBlur="8px"
@@ -42,7 +42,7 @@ export default function hero() {
       >
         <Button p={7} mt={3} colorScheme={"blackAlpha"}>
           <Icon boxSize={9} as={FcGoogle} mr={5} />
-          Connect with Google
+          <Text fontSize="xl">Connect with Google</Text>
         </Button>
         <Flex justify={"space-evenly"} align={"center"}>
           <Divider pt={5} width={{ base: "9rem", md: "11rem" }} />
@@ -53,13 +53,18 @@ export default function hero() {
         </Flex>
 
         <FormControl p={7} minHeight={"30rem"}>
-          <FormLabel color="white" mt={"5rem"} htmlFor="email">
+          <FormLabel
+            fontSize={{ md: "2xl" }}
+            color="white"
+            mt={{ base: 10, md: 20 }}
+            htmlFor="email"
+          >
             Email address
           </FormLabel>
           <Input id="email" type="email" />
 
           <Center>
-            <Button size="lg" mt={5}>
+            <Button size="lg" mt={{ base: 3, md: 5 }}>
               Submit
             </Button>
           </Center>

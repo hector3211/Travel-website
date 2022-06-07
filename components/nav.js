@@ -32,15 +32,14 @@ export default function nav() {
       align="center"
       position="fixed"
       width="100%"
-      minHeight="2rem"
-      py={3}
+      minHeight="0.5rem"
+      py={1}
       px={20}
     >
       <Text fontSize={"3xl"}>Travel</Text>
       <Flex>
         <Menu>
           <MenuButton
-            _focus={"none"}
             bgColor={"whiteAlpha.50"}
             _hover={{ bgColor: "whiteAlpa.100" }}
             as={IconButton}

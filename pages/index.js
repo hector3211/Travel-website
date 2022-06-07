@@ -3,6 +3,7 @@ import Nav from "../components/nav";
 import Hero from "../components/hero";
 import About from "../components/about";
 import Carousel from "../components/carousel";
+import SmallCarousel from "../components/smallCarousel";
 export default function Home() {
   return (
     <Box>
@@ -10,6 +11,7 @@ export default function Home() {
       <Hero />
       <About />
       <Carousel />
+      <SmallCarousel />
     </Box>
   );
 }

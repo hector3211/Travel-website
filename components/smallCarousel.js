@@ -10,13 +10,13 @@ export default function carousel() {
       maxW={{ base: "100%", md: "100%" }}
       bgGradient="linear(to-b, #E8E9E9, #CBF4F7)"
       mt={5}
-      display={{ base: "none", md: "block" }}
+      display={{ base: "block", md: "none" }}
     >
       <Swiper
         direction={"horizontal"}
-        slidesPerView={4}
-        spaceBetween={20}
-        slidesPerGroup={3}
+        slidesPerView={1}
+        spaceBetween={2}
+        slidesPerGroup={1}
         mousewheel={true}
         pagination={{
           clickable: true,
