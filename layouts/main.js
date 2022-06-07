@@ -7,16 +7,7 @@ export default function main({ children }) {
     <Box as="main" minheight="100vh">
       <Head>
         <meta content="width=device-width, inital-scale=1" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="true"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
-          rel="stylesheet"
-        ></link>
+        <meta charSet="utf-8" />
       </Head>
       <Box maxWidth="100%" fontFamily={"'Poppins', sans-serif"}>
         {children}
