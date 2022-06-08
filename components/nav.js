@@ -26,7 +26,7 @@ export default function nav() {
 
   return (
     <Flex
-      bgColor={navbar ? "black" : "transparent"}
+      bgColor={navbar ? "gray.500" : "transparent"}
       zIndex={1}
       justify={"space-between"}
       align="center"
@@ -34,7 +34,7 @@ export default function nav() {
       width="100%"
       minHeight="0.5rem"
       py={1}
-      px={20}
+      px={{ base: 30, md: 20 }}
     >
       <Text fontSize={"3xl"}>Travel</Text>
       <Flex>

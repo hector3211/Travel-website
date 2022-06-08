@@ -42,7 +42,7 @@ export default function hero() {
       >
         <Button p={7} mt={3} colorScheme={"blackAlpha"}>
           <Icon boxSize={9} as={FcGoogle} mr={5} />
-          <Text fontSize="xl">Connect with Google</Text>
+          <Text fontSize={"xl"}>Connect with Google</Text>
         </Button>
         <Flex justify={"space-evenly"} align={"center"}>
           <Divider pt={5} width={{ base: "9rem", md: "11rem" }} />
@@ -54,7 +54,7 @@ export default function hero() {
 
         <FormControl p={7} minHeight={"30rem"}>
           <FormLabel
-            fontSize={{ md: "2xl" }}
+            fontSize={{ md: "xl" }}
             color="white"
             mt={{ base: 10, md: 20 }}
             htmlFor="email"

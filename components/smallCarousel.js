@@ -9,7 +9,7 @@ export default function carousel() {
     <Box
       maxW={{ base: "100%", md: "100%" }}
       bgGradient="linear(to-b, #E8E9E9, #CBF4F7)"
-      mt={5}
+      pt={5}
       display={{ base: "block", md: "none" }}
     >
       <Swiper

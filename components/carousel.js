@@ -3,15 +3,18 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Mousewheel, Pagination } from "swiper";
-import { Box, Image } from "@chakra-ui/react";
+import { Box, Center, Image, Text } from "@chakra-ui/react";
 export default function carousel() {
   return (
     <Box
       maxW={{ base: "100%", md: "100%" }}
       bgGradient="linear(to-b, #E8E9E9, #CBF4F7)"
-      mt={5}
+      py={5}
       display={{ base: "none", md: "block" }}
     >
+      <Center>
+        <Text fontSize={"3xl"}>Places</Text>
+      </Center>
       <Swiper
         direction={"horizontal"}
         slidesPerView={4}
