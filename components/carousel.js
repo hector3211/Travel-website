@@ -7,13 +7,15 @@ import { Box, Center, Image, Text } from "@chakra-ui/react";
 export default function carousel() {
   return (
     <Box
-      maxW={{ base: "100%", md: "100%" }}
-      bgColor="gray.400"
+      maxW={"100%"}
+      bgGradient="linear(to-b, gray.200,blue.50 )"
       py={5}
       display={{ base: "none", md: "block" }}
     >
       <Center>
-        <Text fontSize={"5xl"}>Places</Text>
+        <Text fontSize={"5xl"} fontWeight="bold">
+          Places
+        </Text>
       </Center>
       <Swiper
         direction={"horizontal"}
@@ -31,11 +33,12 @@ export default function carousel() {
           <Image
             my={5}
             rounded={3}
-            src="/images/gridone.jpg"
+            src="/images/gridsix.jpg"
             alt="grid one photo"
             objectFit={"cover"}
+            objectPosition={"bottom"}
             w="100%"
-            h="300px"
+            h="400px"
           />
         </SwiperSlide>
         <SwiperSlide>
@@ -46,7 +49,7 @@ export default function carousel() {
             alt="grid one photo"
             objectFit={"cover"}
             w="100%"
-            h="300px"
+            h="400px"
           />
         </SwiperSlide>
         <SwiperSlide>
@@ -58,7 +61,7 @@ export default function carousel() {
             objectFit={"cover"}
             objectPosition="top"
             w="100%"
-            h="300px"
+            h="400px"
           />
         </SwiperSlide>
         <SwiperSlide>
@@ -69,19 +72,19 @@ export default function carousel() {
             alt="grid one photo"
             objectFit={"cover"}
             w="100%"
-            h="300px"
+            h="400px"
           />
         </SwiperSlide>
         <SwiperSlide>
           <Image
             my={5}
             rounded={3}
-            src="/images/gridsix.jpg"
+            src="/images/gridone.jpg"
             alt="grid one photo"
             objectFit={"cover"}
             objectPosition="bottom"
             w="100%"
-            h="300px"
+            h="400px"
           />
         </SwiperSlide>
       </Swiper>

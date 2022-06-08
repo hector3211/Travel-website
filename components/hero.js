@@ -26,15 +26,15 @@ export default function hero() {
         sx={{ aspectRatio: "16/9" }}
       />
       <Flex
-        flexShrink={1}
         minWidth={{ base: "80%", md: "75%", lg: "30%" }}
         position="absolute"
         direction="column"
         align="center"
-        right={{ base: "9%", md: "12%", lg: "5%" }}
-        top="18rem"
+        right={{ base: "2.5%", md: "12%", lg: "10%" }}
+        left={{ base: "2.5%", md: "12%", lg: "60%" }}
+        top="13rem"
         maxHeight={{ base: "20rem", md: "25rem" }}
-        p={{ md: 5 }}
+        p={5}
         backdropFilter="auto"
         backdropBlur="8px"
         border="1px solid white"
@@ -52,7 +52,7 @@ export default function hero() {
           <Divider pt={5} width={{ base: "9rem", md: "11rem" }} />
         </Flex>
 
-        <FormControl p={7} minHeight={"30rem"}>
+        <FormControl maxW={{ md: "80%", lg: "100%" }} minHeight={"30rem"}>
           <FormLabel
             fontSize={{ md: "xl" }}
             color="white"
@@ -64,7 +64,14 @@ export default function hero() {
           <Input id="email" type="email" />
 
           <Center>
-            <Button size="lg" mt={{ base: 3, md: 5 }}>
+            <Button
+              width={"10rem"}
+              color="white"
+              bgColor={"#6D65D8"}
+              _hover={{ bgColor: "#5F57BD" }}
+              size="lg"
+              mt={{ base: 3, md: 6 }}
+            >
               Submit
             </Button>
           </Center>

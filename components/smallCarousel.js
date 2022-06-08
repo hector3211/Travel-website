@@ -2,7 +2,8 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Mousewheel, Pagination } from "swiper";
+
+import { Pagination } from "swiper";
 import { Box, Image } from "@chakra-ui/react";
 export default function carousel() {
   return (
@@ -15,24 +16,24 @@ export default function carousel() {
       <Swiper
         direction={"horizontal"}
         slidesPerView={1}
-        spaceBetween={2}
+        spaceBetween={0}
         slidesPerGroup={1}
-        mousewheel={true}
         pagination={{
           clickable: true,
         }}
-        modules={[Mousewheel, Pagination]}
+        modules={[Pagination]}
         className="mySwiper"
       >
         <SwiperSlide>
           <Image
             my={5}
             rounded={3}
-            src="/images/gridone.jpg"
+            src="/images/gridsix.jpg"
             alt="grid one photo"
             objectFit={"cover"}
+            objectPosition="bottom"
             w="100%"
-            h="300px"
+            h="400px"
           />
         </SwiperSlide>
         <SwiperSlide>
@@ -43,7 +44,7 @@ export default function carousel() {
             alt="grid one photo"
             objectFit={"cover"}
             w="100%"
-            h="300px"
+            h="400px"
           />
         </SwiperSlide>
         <SwiperSlide>
@@ -55,7 +56,7 @@ export default function carousel() {
             objectFit={"cover"}
             objectPosition="top"
             w="100%"
-            h="300px"
+            h="400px"
           />
         </SwiperSlide>
         <SwiperSlide>
@@ -66,19 +67,19 @@ export default function carousel() {
             alt="grid one photo"
             objectFit={"cover"}
             w="100%"
-            h="300px"
+            h="400px"
           />
         </SwiperSlide>
         <SwiperSlide>
           <Image
             my={5}
             rounded={3}
-            src="/images/gridsix.jpg"
+            src="/images/gridone.jpg"
             alt="grid one photo"
             objectFit={"cover"}
             objectPosition="bottom"
             w="100%"
-            h="300px"
+            h="400px"
           />
         </SwiperSlide>
       </Swiper>
