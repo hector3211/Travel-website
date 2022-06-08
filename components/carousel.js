@@ -8,16 +8,16 @@ export default function carousel() {
   return (
     <Box
       maxW={{ base: "100%", md: "100%" }}
-      bgGradient="linear(to-b, #E8E9E9, #CBF4F7)"
+      bgColor="gray.400"
       py={5}
       display={{ base: "none", md: "block" }}
     >
       <Center>
-        <Text fontSize={"3xl"}>Places</Text>
+        <Text fontSize={"5xl"}>Places</Text>
       </Center>
       <Swiper
         direction={"horizontal"}
-        slidesPerView={4}
+        slidesPerView={3.3}
         spaceBetween={20}
         slidesPerGroup={3}
         mousewheel={true}

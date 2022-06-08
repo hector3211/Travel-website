@@ -21,7 +21,7 @@ export default function hero() {
         autoPlay={true}
         muted={true}
         loop={true}
-        src="/videos/travel.mp4"
+        src="/videos/traveltwo.mp4"
         objectFit="cover"
         sx={{ aspectRatio: "16/9" }}
       />
@@ -31,7 +31,7 @@ export default function hero() {
         position="absolute"
         direction="column"
         align="center"
-        left={{ base: "9%", md: "12%", lg: "5%" }}
+        right={{ base: "9%", md: "12%", lg: "5%" }}
         top="18rem"
         maxHeight={{ base: "20rem", md: "25rem" }}
         p={{ md: 5 }}
