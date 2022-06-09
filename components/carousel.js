@@ -6,15 +6,10 @@ import { Mousewheel, Pagination } from "swiper";
 import { Box, Center, Image, Text } from "@chakra-ui/react";
 export default function carousel() {
   return (
-    <Box
-      maxW={"100%"}
-      bgGradient="linear(to-b, gray.200,blue.50 )"
-      py={5}
-      display={{ base: "none", md: "block" }}
-    >
+    <Box maxW={"100%"} py={5} display={{ base: "none", md: "block" }}>
       <Center>
-        <Text fontSize={"5xl"} fontWeight="bold">
-          Places
+        <Text px={3} fontSize={{ base: "3xl", md: "5xl" }} fontWeight="bold">
+          Featured places
         </Text>
       </Center>
       <Swiper

@@ -2,9 +2,8 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-
 import { Pagination } from "swiper";
-import { Box, Image } from "@chakra-ui/react";
+import { Box, Image, Center, Text } from "@chakra-ui/react";
 export default function carousel() {
   return (
     <Box
@@ -13,6 +12,11 @@ export default function carousel() {
       pt={5}
       display={{ base: "block", md: "none" }}
     >
+      <Center>
+        <Text fontSize={"4xl"} fontWeight="bold">
+          Featured places
+        </Text>
+      </Center>
       <Swiper
         direction={"horizontal"}
         slidesPerView={1}

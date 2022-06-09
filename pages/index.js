@@ -4,6 +4,7 @@ import Hero from "../components/hero";
 import About from "../components/about";
 import Carousel from "../components/carousel";
 import SmallCarousel from "../components/smallCarousel";
+import Testimonials from "../components/testimonials";
 export default function Home() {
   return (
     <Box>
@@ -12,6 +13,7 @@ export default function Home() {
       <About />
       <Carousel />
       <SmallCarousel />
+      <Testimonials />
     </Box>
   );
 }

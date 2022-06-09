@@ -28,13 +28,13 @@ export default function nav() {
   return (
     <Flex
       bgColor={navbar ? "gray.500" : "transparent"}
-      zIndex={1}
+      zIndex={10}
       justify={"space-between"}
       align="center"
       position="fixed"
       width="100%"
       minHeight="0.5rem"
-      py={1}
+      py={navbar ? 1 : 5}
       px={{ base: 30, md: 20 }}
     >
       <Text fontSize={"3xl"}>Travel</Text>

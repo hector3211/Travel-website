@@ -10,14 +10,9 @@ import {
 
 export default function about() {
   return (
-    <Flex
-      position={"relative"}
-      direction={"column"}
-      justify="center"
-      bgGradient="linear(to-b, blue.50,gray.200 )"
-    >
+    <Flex position={"relative"} direction={"column"} justify="center">
       <Center>
-        <Text py={3} fontSize={"6xl"} fontWeight="bold">
+        <Text py={3} fontSize={{ base: "3xl", md: "5xl" }} fontWeight="bold">
           About
         </Text>
       </Center>
