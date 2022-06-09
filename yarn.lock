@@ -960,9 +960,9 @@
   dependencies:
     "glob" "7.1.7"
 
-"@next/swc-win32-x64-msvc@12.1.6":
-  "integrity" "sha512-4ZEwiRuZEicXhXqmhw3+de8Z4EpOLQj/gp+D9fFWo6ii6W1kBkNNvvEx4A90ugppu+74pT1lIJnOuz3A9oQeJA=="
-  "resolved" "https://registry.npmjs.org/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-12.1.6.tgz"
+"@next/swc-darwin-arm64@12.1.6":
+  "integrity" "sha512-P0EXU12BMSdNj1F7vdkP/VrYDuCNwBExtRPDYawgSUakzi6qP0iKJpya2BuLvNzXx+XPU49GFuDC5X+SvY0mOw=="
+  "resolved" "https://registry.npmjs.org/@next/swc-darwin-arm64/-/swc-darwin-arm64-12.1.6.tgz"
   "version" "12.1.6"
 
 "@nodelib/fs.scandir@2.1.5":
@@ -1763,10 +1763,10 @@
   dependencies:
     "tslib" "^2.0.3"
 
-"framer-motion@^6.3.8", "framer-motion@>=4.0.0":
-  "integrity" "sha512-FBbSAG/kzi3Tm9taF6tULhdKtWqiXmISBocsNC+jqHMQP/3PsnS0dFL2qZMmwgVAGwg3InhY739gKNjqOCR7Cw=="
-  "resolved" "https://registry.npmjs.org/framer-motion/-/framer-motion-6.3.8.tgz"
-  "version" "6.3.8"
+"framer-motion@^6.3.11", "framer-motion@>=4.0.0":
+  "integrity" "sha512-xQLk+ZSklNs5QNCUmdWPpKMOuWiB8ZETsvcIOWw8xvri9K3TamuifgCI/B6XpaEDR0/V2ZQF2Wm+gUAZrXo+rw=="
+  "resolved" "https://registry.npmjs.org/framer-motion/-/framer-motion-6.3.11.tgz"
+  "version" "6.3.11"
   dependencies:
     "framesync" "6.0.1"
     "hey-listen" "^1.0.8"

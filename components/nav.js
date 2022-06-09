@@ -50,7 +50,8 @@ export default function nav() {
           <MenuList bgColor={"whiteAlpha.2000"}>
             <MenuItem>Home</MenuItem>
             <MenuItem>About</MenuItem>
-            <MenuItem>Packages</MenuItem>
+            <MenuItem>Featured places</MenuItem>
+            <MenuItem>Testimonials</MenuItem>
           </MenuList>
         </Menu>
       </Flex>
