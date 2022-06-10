@@ -8,7 +8,7 @@ export default function carousel() {
   return (
     <Box maxW={"100%"} py={5} display={{ base: "none", md: "block" }}>
       <Center>
-        <Text px={3} fontSize={{ base: "3xl", md: "5xl" }} fontWeight="bold">
+        <Text py={3} fontSize={{ base: "3xl", md: "5xl" }} fontWeight="bold">
           Featured places
         </Text>
       </Center>
@@ -75,6 +75,30 @@ export default function carousel() {
             my={5}
             rounded={3}
             src="/images/gridone.jpg"
+            alt="grid one photo"
+            objectFit={"cover"}
+            objectPosition="bottom"
+            w="100%"
+            h="400px"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Image
+            my={5}
+            rounded={3}
+            src="/images/gridfive.jpg"
+            alt="grid one photo"
+            objectFit={"cover"}
+            objectPosition="bottom"
+            w="100%"
+            h="400px"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Image
+            my={5}
+            rounded={3}
+            src="/images/gridthree.jpg"
             alt="grid one photo"
             objectFit={"cover"}
             objectPosition="bottom"

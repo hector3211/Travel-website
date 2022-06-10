@@ -18,13 +18,5 @@ export const StyledBox = ({ children, delay = 0 }) => {
 };
 
 export const ScaleBox = ({ children, delay = 0 }) => {
-  return (
-    <ChakraBox
-      initial={{ scale: 0.9 }}
-      animate={{ scale: 1 }}
-      transition={{ type: "spring", duration: 0.8, delay }}
-    >
-      {children}
-    </ChakraBox>
-  );
+  return <ChakraBox whileHover={{ scale: 1.2 }}>{children}</ChakraBox>;
 };
