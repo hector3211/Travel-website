@@ -5,20 +5,24 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Autoplay } from "swiper";
 export default function weather() {
-  const [city, setCity] = useState("");
+  const [city, setCity] = useState(null);
 
   useEffect(() => {
-    Axios.get(
-      `https://api.openweathermap.org/data/2.5/weather?lat=27.7&lon=-82.6&appid=${process.env.API_KEY}`
-    )
-      .then((response) => {
-        setCity(
-          `${response.data.name} ${response.data.main.temp} ${response.data.weather[0].description}`
-        );
-      })
-      .catch((error) => console.log(error));
+    const getData = async () =>
+      await Axios.get(
+        `https://api.openweathermap.org/data/2.5/weather?lat=27.7&lon=-82.6&appid=${process.env.NEXT_PUBLIC_SECRET_KEY}`
+      )
+        .then((response) => {
+          setCity(
+            `${response.data.name} ${Math.round(
+              Math.round(response.data.main.temp - 273.15) * 1.8 + 32
+            )}🌡 ${response.data.weather[0].description}`
+          );
+        })
+        .catch((error) => console.log(error));
+    getData();
   }, []);
-
+  console.log(city);
   return (
     <Box color="white" minH="4rem" bgColor="#6C63FF">
       <Swiper
@@ -33,14 +37,14 @@ export default function weather() {
       >
         <SwiperSlide>
           <Center>
-            <Text pt={3} fontSize={"3xl"}>
+            <Text mt={{ base: 4, md: 2 }} fontSize={{ base: "xl", md: "4xl" }}>
               {city}
             </Text>
           </Center>
         </SwiperSlide>
         <SwiperSlide>
           <Center>
-            <Text pt={2} fontSize={"3xl"}>
+            <Text mt={{ base: 4, md: 2 }} fontSize={{ base: "xl", md: "4xl" }}>
               {city}
             </Text>
           </Center>

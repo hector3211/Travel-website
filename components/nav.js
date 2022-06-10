@@ -27,7 +27,9 @@ export default function nav() {
 
   return (
     <Flex
-      bgColor={navbar ? "gray.500" : "transparent"}
+      bgColor={navbar ? "#6C63FF" : "transparent"}
+      backdropFilter={navbar && "auto"}
+      backdropBlur={navbar && "20px"}
       zIndex={10}
       justify={"space-between"}
       align="center"
@@ -37,12 +39,12 @@ export default function nav() {
       py={navbar ? 1 : 5}
       px={{ base: 30, md: 20 }}
     >
-      <Text fontSize={"3xl"}>Travel</Text>
+      <Text fontSize={navbar ? "3xl" : "5xl"}>Travel</Text>
       <Flex>
         <Menu>
           <MenuButton
-            bgColor={"whiteAlpha.50"}
-            _hover={{ bgColor: "whiteAlpa.100" }}
+            bgColor={"transparent"}
+            _hover={{ bgColor: "whiteAlpa.100", border: "1px solid white" }}
             as={IconButton}
           >
             <Icon boxSize={6} as={BiMenu} />
