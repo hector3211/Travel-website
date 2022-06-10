@@ -107,16 +107,13 @@ export default function testimonials() {
           </Flex>
         </Box>
         <Box mt={10}>
-          <Text textAlign={"justify"} fontSize={{ base: "2xl", md: "3xl" }}>
-            Here at Travel we value are customer's
-          </Text>
           <Image
             mt={10}
-            ml={200}
             src="/images/review.svg"
             alt="testimonials"
             objectFit={"contain"}
-            w="40%"
+            w="100%"
+            h="500px"
           />
         </Box>
       </SimpleGrid>

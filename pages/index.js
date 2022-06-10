@@ -5,12 +5,13 @@ import About from "../components/about";
 import Carousel from "../components/carousel";
 import SmallCarousel from "../components/smallCarousel";
 import Testimonials from "../components/testimonials";
-
+import Weather from "../components/weather";
 export default function Home() {
   return (
     <Box>
       <Nav />
       <Hero />
+      <Weather />
       <About />
       <Carousel />
       <SmallCarousel />
