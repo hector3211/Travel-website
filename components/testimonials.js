@@ -11,26 +11,27 @@ import React from "react";
 
 export default function testimonials() {
   return (
-    <Box py={10} position={"relative"} minH="40rem">
+    <Box>
       <Center>
         <Text py={3} fontWeight="bold" fontSize={{ base: "3xl", md: "5xl" }}>
           Testimonials
         </Text>
       </Center>
-      <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
-        <Box>
+      <SimpleGrid minH="40rem" columns={{ base: 1, md: 2 }} spacing={1}>
+        <Flex
+          p={{ base: 2, md: 0 }}
+          direction={"column"}
+          justify="space-between"
+          align="center"
+        >
           <Flex
-            position={{ md: "absolute" }}
-            zIndex={1}
-            top={"28%"}
-            right={"70%"}
-            bottom={"75%"}
             rounded={5}
             bgColor="gray.100"
             maxWidth="25rem"
             h="12rem"
             p={2}
             shadow="lg"
+            my={2}
           >
             <Avatar
               src="/images/persontwo.jpg"
@@ -49,17 +50,13 @@ export default function testimonials() {
           </Flex>
 
           <Flex
-            position={{ md: "absolute" }}
-            zIndex={1}
-            top={"45%"}
-            bottom={"65%"}
-            right={"58%"}
             rounded={5}
             bgColor="gray.100"
             maxWidth="25rem"
             h="12rem"
             p={2}
             shadow="lg"
+            my={2}
           >
             <Avatar
               src="/images/personone.jpg"
@@ -78,17 +75,13 @@ export default function testimonials() {
           </Flex>
 
           <Flex
-            position={{ md: "absolute" }}
-            zIndex={1}
-            top={"65%"}
-            bottom={"45%"}
-            right={"48%"}
             rounded={5}
             bgColor="gray.100"
             maxWidth="25rem"
             h="12rem"
             p={2}
             shadow="lg"
+            my={2}
           >
             <Avatar
               src="/images/personone.jpg"
@@ -105,15 +98,15 @@ export default function testimonials() {
               </Text>
             </Flex>
           </Flex>
-        </Box>
-        <Box mt={10}>
+        </Flex>
+        <Box p={2}>
           <Image
             mt={10}
             src="/images/review.svg"
             alt="testimonials"
             objectFit={"contain"}
             w="100%"
-            h="500px"
+            minH="300px"
           />
         </Box>
       </SimpleGrid>

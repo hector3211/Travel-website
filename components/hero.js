@@ -67,7 +67,7 @@ export default function hero() {
             <Button
               width={"10rem"}
               color="white"
-              bgColor={"#6D65D8"}
+              bgColor={"#6C63FF"}
               _hover={{ bgColor: "#5F57BD" }}
               size="lg"
               mt={{ base: 3, md: 6 }}
