@@ -1,4 +1,4 @@
-export const rewviewlist = [
+export const reviewlist = [
   {
     id: 1,
     name: "Jess O.",
@@ -7,7 +7,21 @@ export const rewviewlist = [
       "I recently used travel and my experience was the best! they made it so easy",
   },
   {
-    id: 1,
+    id: 2,
+    name: "jay S.",
+    image: "/images/persontwo.jpg",
+    review:
+      "I recently used travel and my experience was the best! they made it so easy",
+  },
+  {
+    id: 3,
+    name: "jay S.",
+    image: "/images/personone.jpg",
+    review:
+      "I recently used travel and my experience was the best! they made it so easy",
+  },
+  {
+    id: 4,
     name: "jay S.",
     image: "/images/persontwo.jpg",
     review:

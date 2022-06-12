@@ -8,7 +8,6 @@ export default function carousel() {
   return (
     <Box
       maxW={{ base: "100%", md: "100%" }}
-      bgGradient="linear(to-b, #E8E9E9, #CBF4F7)"
       pt={5}
       display={{ base: "block", md: "none" }}
     >

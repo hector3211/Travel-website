@@ -8,100 +8,51 @@ import {
   SimpleGrid,
 } from "@chakra-ui/react";
 import React from "react";
-
+import { reviewlist } from "./reviewlist";
 export default function testimonials() {
   return (
-    <Box>
+    <Box minH="45rem">
       <Center>
         <Text py={3} fontWeight="bold" fontSize={{ base: "3xl", md: "5xl" }}>
           Testimonials
         </Text>
       </Center>
-      <SimpleGrid minH="40rem" columns={{ base: 1, md: 2 }} spacing={1}>
+      <Flex direction={{ base: "column-reverse", md: "row" }} justify="center">
         <Flex
-          p={{ base: 2, md: 0 }}
+          p={{ base: 2, md: 5 }}
           direction={"column"}
-          justify="space-between"
-          align="center"
+          align="end"
+          maxH="33rem"
+          overflowY={{ md: "auto" }}
         >
-          <Flex
-            rounded={5}
-            bgColor="gray.100"
-            maxWidth="25rem"
-            h="12rem"
-            p={2}
-            shadow="lg"
-            my={2}
-          >
-            <Avatar
-              src="/images/persontwo.jpg"
-              objectFit={"cover"}
-              alt="review one"
-              size="2xl"
-              name="Jess O."
-            />
-            <Flex ml={3} direction={"column"} w="100%">
-              <Text>Jay S.</Text>
-              <Text textAlign={"justify"}>
-                Just used Travel to book my familys vacation and it was the
-                super easy and fast!
-              </Text>
+          {reviewlist.map((review) => (
+            <Flex
+              key={review.id}
+              rounded={5}
+              bgColor="gray.100"
+              p={2}
+              shadow="lg"
+              my={2}
+              maxW="80%"
+              maxH="12rem"
+            >
+              <Avatar
+                src={review.image}
+                objectFit={"cover"}
+                alt="review one"
+                size="2xl"
+                name="Jess O."
+              />
+              <Flex ml={3} direction={"column"} w="100%">
+                <Text>{review.name}</Text>
+                <Text textAlign={"justify"}>{review.review}</Text>
+              </Flex>
             </Flex>
-          </Flex>
-
-          <Flex
-            rounded={5}
-            bgColor="gray.100"
-            maxWidth="25rem"
-            h="12rem"
-            p={2}
-            shadow="lg"
-            my={2}
-          >
-            <Avatar
-              src="/images/personone.jpg"
-              objectFit={"cover"}
-              alt="review one"
-              size="2xl"
-              name="Jess O."
-            />
-            <Flex ml={3} direction={"column"}>
-              <Text>Jess O.</Text>
-              <Text>
-                I recently used travel and my experience was the best! they made
-                it so easy
-              </Text>
-            </Flex>
-          </Flex>
-
-          <Flex
-            rounded={5}
-            bgColor="gray.100"
-            maxWidth="25rem"
-            h="12rem"
-            p={2}
-            shadow="lg"
-            my={2}
-          >
-            <Avatar
-              src="/images/personone.jpg"
-              objectFit={"cover"}
-              alt="review one"
-              size="2xl"
-              name="Jess O."
-            />
-            <Flex ml={3} direction={"column"}>
-              <Text>Jess O.</Text>
-              <Text>
-                I recently used travel and my experience was the best! they made
-                it so easy
-              </Text>
-            </Flex>
-          </Flex>
+          ))}
         </Flex>
         <Box p={2}>
           <Image
-            mt={10}
+            mt={{ base: 20, md: 0 }}
             src="/images/review.svg"
             alt="testimonials"
             objectFit={"contain"}
@@ -109,7 +60,7 @@ export default function testimonials() {
             minH="300px"
           />
         </Box>
-      </SimpleGrid>
+      </Flex>
     </Box>
   );
 }

@@ -10,7 +10,12 @@ import {
 
 export default function about() {
   return (
-    <Flex position={"relative"} direction={"column"} justify="center">
+    <Flex
+      p={{ base: 2, md: 5 }}
+      position={"relative"}
+      direction={"column"}
+      justify="center"
+    >
       <Center>
         <Text py={3} fontSize={{ base: "3xl", md: "5xl" }} fontWeight="bold">
           About
@@ -18,7 +23,7 @@ export default function about() {
       </Center>
       <Center>
         <SimpleGrid
-          maxW="80%"
+          w="100%"
           columns={{ base: 1, md: 2 }}
           spacing={{ base: 5, md: 3 }}
           py={3}
