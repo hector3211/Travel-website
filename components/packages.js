@@ -3,13 +3,13 @@ import { Box, SimpleGrid, Flex, Text, Image, Center } from "@chakra-ui/react";
 import carouselList from "./carouselList";
 export default function packages() {
   return (
-    <Box>
+    <Box px={3}>
       <Center>
         <Text py={3} fontWeight="bold" fontSize={{ base: "3xl", md: "5xl" }}>
           Packages
         </Text>
       </Center>
-      <SimpleGrid columns={3} spacing={10}>
+      <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={10}>
         {carouselList.map((city) => (
           <Flex
             key={city.id}

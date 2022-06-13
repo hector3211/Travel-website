@@ -11,6 +11,7 @@ import {
   Divider,
 } from "@chakra-ui/react";
 import { FcGoogle } from "react-icons/fc";
+import { ScaleBox } from "../layouts/motion";
 export default function hero() {
   return (
     <Box position="relative">
@@ -31,19 +32,20 @@ export default function hero() {
         direction="column"
         align="center"
         right={{ base: "2.5%", md: "12%", lg: "10%" }}
-        left={{ base: "2.5%", md: "12%", lg: "60%" }}
         top="13rem"
-        maxHeight={{ base: "20rem", md: "25rem" }}
+        maxH={{ base: "25rem", md: "30rem" }}
         p={5}
         backdropFilter="auto"
         backdropBlur="8px"
         border="1px solid white"
         rounded={20}
       >
-        <Button p={7} mt={3} colorScheme={"blackAlpha"}>
-          <Icon boxSize={9} as={FcGoogle} mr={5} />
-          <Text fontSize={"xl"}>Connect with Google</Text>
-        </Button>
+        <ScaleBox>
+          <Button p={7} mt={3} colorScheme={"blackAlpha"}>
+            <Icon boxSize={9} as={FcGoogle} mr={5} />
+            <Text fontSize={"xl"}>Connect with Google</Text>
+          </Button>
+        </ScaleBox>
         <Flex justify={"space-evenly"} align={"center"}>
           <Divider pt={5} width={{ base: "9rem", md: "11rem" }} />
           <Text color="white" mt={2} px={2}>
@@ -61,19 +63,41 @@ export default function hero() {
           >
             Email address
           </FormLabel>
-          <Input id="email" type="email" />
-
+          <Input size="lg" id="email" type="email" />
+          <FormLabel fontSize={{ md: "xl" }} color="white" htmlFor="password">
+            Password
+          </FormLabel>
+          <Input size="lg" id="password" type="password" />
           <Center>
-            <Button
-              width={"10rem"}
-              color="white"
-              bgColor={"#6C63FF"}
-              _hover={{ bgColor: "#5F57BD" }}
-              size="lg"
-              mt={{ base: 3, md: 6 }}
+            <Flex
+              justify={{ base: "space-between", md: "space-around" }}
+              w="100%"
             >
-              Submit
-            </Button>
+              <ScaleBox>
+                <Button
+                  width={"10rem"}
+                  color="white"
+                  bgColor={"#6C63FF"}
+                  _hover={{ bgColor: "#5F57BD" }}
+                  size="lg"
+                  mt={{ base: 3, md: 6 }}
+                >
+                  Sign Up
+                </Button>
+              </ScaleBox>
+              <ScaleBox>
+                <Button
+                  width={"10rem"}
+                  color="white"
+                  bgColor={"#6C63FF"}
+                  _hover={{ bgColor: "#5F57BD" }}
+                  size="lg"
+                  mt={{ base: 3, md: 6 }}
+                >
+                  Login
+                </Button>
+              </ScaleBox>
+            </Flex>
           </Center>
         </FormControl>
       </Flex>

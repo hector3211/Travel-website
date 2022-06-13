@@ -10,6 +10,7 @@ import {
   MenuItem,
   MenuList,
 } from "@chakra-ui/react";
+import { ScaleBox } from "../layouts/motion";
 import { BiMenu } from "react-icons/bi";
 import { useState } from "react";
 export default function nav() {
@@ -39,17 +40,19 @@ export default function nav() {
       py={navbar ? 1 : 5}
       px={{ base: 30, md: 20 }}
     >
-      <Text fontSize={navbar ? "3xl" : "5xl"}>Travel</Text>
+      <Text fontSize={navbar ? "3xl" : "4xl"}>Travel</Text>
       <Flex>
         <Menu>
           <MenuButton
             bgColor={"transparent"}
-            _hover={{ bgColor: "whiteAlpa.100", border: "1px solid white" }}
+            _hover={{ bgColor: "transparent" }}
+            _active={{ border: "1px solid black" }}
             as={IconButton}
           >
-            <Icon boxSize={6} as={BiMenu} />
+            <Icon boxSize={{ base: 7, md: 8 }} as={BiMenu} />
           </MenuButton>
-          <MenuList bgColor={"whiteAlpha.2000"}>
+
+          <MenuList>
             <MenuItem>Home</MenuItem>
             <MenuItem>About</MenuItem>
             <MenuItem>Featured places</MenuItem>

@@ -7,18 +7,7 @@ import { Box, Center, Image, Text } from "@chakra-ui/react";
 import CarouselList from "../components/carouselList";
 export default function carousel() {
   return (
-    <Box
-      bgColor={"gray.800"}
-      color="white"
-      maxW={"100%"}
-      py={5}
-      display={{ base: "none", md: "block" }}
-    >
-      <Center>
-        <Text py={3} fontSize={{ base: "3xl", md: "5xl" }} fontWeight="bold">
-          Featured places
-        </Text>
-      </Center>
+    <Box px={3} maxW={"100%"} display={{ base: "none", md: "block" }}>
       <Swiper
         direction={"horizontal"}
         slidesPerView={3.3}
