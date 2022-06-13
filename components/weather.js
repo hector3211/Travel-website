@@ -1,6 +1,8 @@
 import { Box, Center, Text, Flex } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
-import Axios from "axios";
+import Axios from "../components/axios";
+import axios from "axios";
+import requests from "../components/requests";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Autoplay } from "swiper";
@@ -9,16 +11,12 @@ export default function weather() {
 
   useEffect(() => {
     const getData = async () =>
-      await Axios.get(
-        `https://api.openweathermap.org/data/2.5/weather?lat=27.7&lon=-82.6&appid=${process.env.NEXT_PUBLIC_SECRET_KEY}`
-      )
+      await axios
+        .all(requests.map((request) => Axios.get(request)))
         .then((response) => {
-          setCity(
-            `${response.data.name} ${Math.round(
-              Math.round(response.data.main.temp - 273.15) * 1.8 + 32
-            )}🌡 ${response.data.weather[0].description}`
-          );
+          setCity(response.map((res) => res.data));
         })
+
         .catch((error) => console.log(error));
     getData();
   }, []);
@@ -35,20 +33,32 @@ export default function weather() {
         modules={[Autoplay]}
         className="mySwiper"
       >
-        <SwiperSlide>
-          <Center>
-            <Text mt={{ base: 4, md: 2 }} fontSize={{ base: "xl", md: "4xl" }}>
-              {city}
-            </Text>
-          </Center>
-        </SwiperSlide>
-        <SwiperSlide>
-          <Center>
-            <Text mt={{ base: 4, md: 2 }} fontSize={{ base: "xl", md: "4xl" }}>
-              {city}
-            </Text>
-          </Center>
-        </SwiperSlide>
+        {city.map((city, index) => (
+          <SwiperSlide key={index}>
+            <Center>
+              <Flex justify={"space-around"}>
+                <Text
+                  mt={{ base: 4, md: 2 }}
+                  fontSize={{ base: "xl", md: "4xl" }}
+                >
+                  {city.name}
+                </Text>
+                <Text
+                  mt={{ base: 4, md: 2 }}
+                  fontSize={{ base: "xl", md: "4xl" }}
+                >
+                  {city.main.temp}
+                </Text>
+                <Text
+                  mt={{ base: 4, md: 2 }}
+                  fontSize={{ base: "xl", md: "4xl" }}
+                >
+                  {city.weather[0].description}
+                </Text>
+              </Flex>
+            </Center>
+          </SwiperSlide>
+        ))}
       </Swiper>
     </Box>
   );
