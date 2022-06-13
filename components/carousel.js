@@ -4,9 +4,16 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Mousewheel, Pagination } from "swiper";
 import { Box, Center, Image, Text } from "@chakra-ui/react";
+import CarouselList from "../components/carouselList";
 export default function carousel() {
   return (
-    <Box maxW={"100%"} py={5} display={{ base: "none", md: "block" }}>
+    <Box
+      bgColor={"gray.800"}
+      color="white"
+      maxW={"100%"}
+      py={5}
+      display={{ base: "none", md: "block" }}
+    >
       <Center>
         <Text py={3} fontSize={{ base: "3xl", md: "5xl" }} fontWeight="bold">
           Featured places
@@ -24,88 +31,20 @@ export default function carousel() {
         modules={[Mousewheel, Pagination]}
         className="mySwiper"
       >
-        <SwiperSlide>
-          <Image
-            my={5}
-            rounded={3}
-            src="/images/gridsix.jpg"
-            alt="grid one photo"
-            objectFit={"cover"}
-            objectPosition={"bottom"}
-            w="100%"
-            h="400px"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image
-            my={5}
-            rounded={3}
-            src="/images/gridtwo.jpg"
-            alt="grid one photo"
-            objectFit={"cover"}
-            w="100%"
-            h="400px"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image
-            my={5}
-            rounded={3}
-            src="/images/gridseven.jpg"
-            alt="grid one photo"
-            objectFit={"cover"}
-            objectPosition="top"
-            w="100%"
-            h="400px"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image
-            my={5}
-            rounded={3}
-            src="/images/gridfour.jpg"
-            alt="grid one photo"
-            objectFit={"cover"}
-            w="100%"
-            h="400px"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image
-            my={5}
-            rounded={3}
-            src="/images/gridone.jpg"
-            alt="grid one photo"
-            objectFit={"cover"}
-            objectPosition="bottom"
-            w="100%"
-            h="400px"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image
-            my={5}
-            rounded={3}
-            src="/images/gridfive.jpg"
-            alt="grid one photo"
-            objectFit={"cover"}
-            objectPosition="bottom"
-            w="100%"
-            h="400px"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image
-            my={5}
-            rounded={3}
-            src="/images/gridthree.jpg"
-            alt="grid one photo"
-            objectFit={"cover"}
-            objectPosition="bottom"
-            w="100%"
-            h="400px"
-          />
-        </SwiperSlide>
+        {CarouselList.map((img) => (
+          <SwiperSlide key={img.id}>
+            <Image
+              my={5}
+              rounded={3}
+              src={img.image}
+              alt="grid one photo"
+              objectFit={"cover"}
+              objectPosition={"bottom"}
+              w="100%"
+              h="300px"
+            />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </Box>
   );

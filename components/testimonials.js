@@ -11,7 +11,7 @@ import React from "react";
 import { reviewlist } from "./reviewlist";
 export default function testimonials() {
   return (
-    <Box minH="45rem">
+    <Box>
       <Center>
         <Text py={3} fontWeight="bold" fontSize={{ base: "3xl", md: "5xl" }}>
           Testimonials
@@ -33,7 +33,7 @@ export default function testimonials() {
               p={2}
               shadow="lg"
               my={2}
-              maxW="80%"
+              maxW={{ base: "100%", md: "80%" }}
               maxH="12rem"
             >
               <Avatar
@@ -52,7 +52,7 @@ export default function testimonials() {
         </Flex>
         <Box p={2}>
           <Image
-            mt={{ base: 20, md: 0 }}
+            mt={{ base: 1, md: 0 }}
             src="/images/review.svg"
             alt="testimonials"
             objectFit={"contain"}
