@@ -17,9 +17,17 @@ export const StyledBox = ({ children, delay = 0 }) => {
   );
 };
 
-export const ScaleBox = ({ children, delay = 0 }) => {
+export const ScaleButton = ({ children }) => {
   return (
     <ChakraBox whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}>
+      {children}
+    </ChakraBox>
+  );
+};
+
+export const ScaleBox = ({ children }) => {
+  return (
+    <ChakraBox whileHover={{ scale: 1.1, cursor: "pointer" }}>
       {children}
     </ChakraBox>
   );

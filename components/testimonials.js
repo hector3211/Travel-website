@@ -16,18 +16,20 @@ export default function testimonials() {
       direction={"column"}
       align="center"
       justify="space-around"
-      my={{ base: 5, md: 10 }}
+      my={{ base: 5, md: 20 }}
     >
-      <Text fontWeight="bold" fontSize={{ base: "4xl", md: "5xl" }}>
+      <Text pb={3} fontWeight="bold" fontSize={{ base: "4xl", md: "5xl" }}>
         Testimonials
       </Text>
       <Flex
-        py={{ md: 20 }}
-        px={1}
+        rounded={10}
+        shadow={{ base: "none", md: "dark-lg" }}
+        py={10}
+        px={5}
         direction={{ base: "column", md: "row" }}
         align="center"
         overflowX={{ md: "auto" }}
-        maxW={"100%"}
+        maxW={{ base: "100%", md: "90%" }}
       >
         {reviewlist.map((review) => (
           <Flex
@@ -38,7 +40,7 @@ export default function testimonials() {
             mx={2}
             my={{ base: 2, md: 5 }}
             shadow="lg"
-            minW={{ base: "100%", md: "30%" }}
+            minW={{ base: "100%", md: "40%" }}
           >
             <Avatar
               src={review.image}

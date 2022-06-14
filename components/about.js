@@ -46,7 +46,10 @@ export default function about() {
                 direction={"column"}
               >
                 <Text fontSize={"3xl"}>Our team</Text>
-                <Text fontSize={"xl"} style={{ textIndent: "1rem" }}>
+                <Text
+                  fontSize={{ base: "xl", md: "2xl" }}
+                  style={{ textIndent: "1rem" }}
+                >
                   At Travel we hand select the best of the best to join our
                   company to be able to provide the best experience to our
                   customers
@@ -56,7 +59,11 @@ export default function about() {
             <Container maxW={"100%"}>
               <Flex mt={20} justify="start" align="center" direction={"column"}>
                 <Text fontSize={"3xl"}>Our offices</Text>
-                <Text mt={5} fontSize={"xl"} style={{ textIndent: "1rem" }}>
+                <Text
+                  mt={5}
+                  fontSize={{ base: "xl", md: "2xl" }}
+                  style={{ textIndent: "1rem" }}
+                >
                   With multiple offices all over the US and some internationaly
                   we got you covered from where ever you may be.
                 </Text>

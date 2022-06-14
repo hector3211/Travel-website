@@ -9,9 +9,10 @@ export default function carousel() {
   return (
     <Box
       id="places"
-      px={1}
+      px={2}
       maxW={"100%"}
       display={{ base: "none", md: "block" }}
+      shadow="dark-lg"
     >
       <Swiper
         direction={"horizontal"}
@@ -34,7 +35,7 @@ export default function carousel() {
               objectFit={"cover"}
               objectPosition={"bottom"}
               w="100%"
-              h="300px"
+              h="400px"
             />
           </SwiperSlide>
         ))}

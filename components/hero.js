@@ -1,5 +1,5 @@
 import { Box, Flex, Button, Center, Link, Text } from "@chakra-ui/react";
-import { ScaleBox } from "../layouts/motion";
+import { ScaleButton } from "../layouts/motion";
 import { useUser } from "@auth0/nextjs-auth0";
 export default function hero() {
   const { user } = useUser();
@@ -34,7 +34,7 @@ export default function hero() {
         {user && (
           <Flex align="center" w="100%" justify={"center"}>
             <Text fontSize={"2xl"} color="white">
-              Welcome{" "}
+              Welcome
             </Text>
             <Text ml={5} fontSize={{ base: "xl", md: "4xl" }} color="white">
               {user.nickname}
@@ -44,7 +44,7 @@ export default function hero() {
         <Center>
           {user ? (
             <Link textDecoration={"none"} href="/api/auth/logout">
-              <ScaleBox>
+              <ScaleButton>
                 <Button
                   width={"12rem"}
                   height="4rem"
@@ -56,13 +56,14 @@ export default function hero() {
                 >
                   Logout
                 </Button>
-              </ScaleBox>
+              </ScaleButton>
             </Link>
           ) : (
             <Link textDecoration={"none"} href="/api/auth/login">
-              <ScaleBox>
+              <ScaleButton>
                 <Button
-                  width={"10rem"}
+                  width={"12rem"}
+                  height="4rem"
                   color="white"
                   bgColor={"#6C63FF"}
                   _hover={{ bgColor: "#5F57BD" }}
@@ -71,7 +72,7 @@ export default function hero() {
                 >
                   Login
                 </Button>
-              </ScaleBox>
+              </ScaleButton>
             </Link>
           )}
         </Center>

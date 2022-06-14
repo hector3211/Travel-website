@@ -39,27 +39,20 @@ export default function weather() {
         {weather &&
           data.map((city, index) => (
             <SwiperSlide key={index}>
-              <Flex justify={"center"} align={"center"} flexWrap="wrap">
-                <Text
-                  mt={{ base: 4, md: 2 }}
-                  fontSize={{ base: "xl", md: "4xl" }}
-                  mx={1}
-                >
+              <Flex
+                p={3}
+                justify={"center"}
+                align={"center"}
+                flexWrap="no-wrap"
+              >
+                <Text fontSize={{ base: "xl", md: "4xl" }} mx={1}>
                   {city.name}
                 </Text>
-                <Text
-                  mt={{ base: 4, md: 2 }}
-                  fontSize={{ base: "xl", md: "4xl" }}
-                  mx={1}
-                >
+                <Text fontSize={{ base: "xl", md: "4xl" }} mx={1}>
                   {Math.round(Math.round(city.main.temp - 273.15) * 1.8 + 32)}
                   🌡
                 </Text>
-                <Text
-                  mt={{ base: 4, md: 2 }}
-                  fontSize={{ base: "xl", md: "4xl" }}
-                  mx={1}
-                >
+                <Text fontSize={{ base: "xl", md: "4xl" }} mx={1}>
                   {city.weather[0].description}
                   {(city.weather[0].description === "clear sky") | "clear"
                     ? "☀️"
