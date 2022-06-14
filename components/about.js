@@ -10,8 +10,9 @@ import {
 import { StyledBox } from "../layouts/motion";
 export default function about() {
   return (
-    <StyledBox minH="100vh" delay={0.3}>
+    <StyledBox delay={0.3}>
       <Flex
+        id="about"
         p={{ base: 2, md: 5 }}
         position={"relative"}
         direction={"column"}

@@ -1,6 +1,5 @@
 import {
-  Image,
-  Box,
+  Link,
   Flex,
   Text,
   Icon,
@@ -10,7 +9,7 @@ import {
   MenuItem,
   MenuList,
 } from "@chakra-ui/react";
-import { ScaleBox } from "../layouts/motion";
+import NextLink from "next/link";
 import { BiMenu } from "react-icons/bi";
 import { useState } from "react";
 export default function nav() {
@@ -53,10 +52,31 @@ export default function nav() {
           </MenuButton>
 
           <MenuList>
-            <MenuItem>Home</MenuItem>
-            <MenuItem>About</MenuItem>
-            <MenuItem>Featured places</MenuItem>
-            <MenuItem>Testimonials</MenuItem>
+            <MenuItem>
+              <NextLink href="/" passHref>
+                <Link w="100%">Home</Link>
+              </NextLink>
+            </MenuItem>
+            <MenuItem>
+              <NextLink href="#about" passHref>
+                <Link w="100%">About</Link>
+              </NextLink>
+            </MenuItem>
+            <MenuItem>
+              <NextLink href="#places" passHref>
+                <Link w="100%">Featured Places</Link>
+              </NextLink>
+            </MenuItem>
+            <MenuItem>
+              <NextLink href="#testimonials" passHref>
+                <Link w="100%">Testimonials</Link>
+              </NextLink>
+            </MenuItem>
+            <MenuItem>
+              <NextLink href="#packages" passHref>
+                <Link w="100%">Packages</Link>
+              </NextLink>
+            </MenuItem>
           </MenuList>
         </Menu>
       </Flex>

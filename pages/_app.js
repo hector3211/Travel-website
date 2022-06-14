@@ -1,14 +1,17 @@
+import { UserProvider } from "@auth0/nextjs-auth0";
 import { ChakraProvider } from "@chakra-ui/react";
 import Layout from "../layouts/main";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ChakraProvider>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </ChakraProvider>
+    <UserProvider>
+      <ChakraProvider>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </ChakraProvider>
+    </UserProvider>
   );
 }
 

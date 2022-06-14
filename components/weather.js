@@ -25,7 +25,7 @@ export default function weather() {
   console.log(data);
 
   return (
-    <Box color="white" minH="4rem" bgColor="#6C63FF">
+    <Box color="white" maxH="10rem" bgColor="#6C63FF">
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -39,35 +39,33 @@ export default function weather() {
         {weather &&
           data.map((city, index) => (
             <SwiperSlide key={index}>
-              <Center>
-                <Flex justify={"space-between"}>
-                  <Text
-                    mt={{ base: 4, md: 2 }}
-                    fontSize={{ base: "xl", md: "5xl" }}
-                    mx={1}
-                  >
-                    {city.name}
-                  </Text>
-                  <Text
-                    mt={{ base: 4, md: 2 }}
-                    fontSize={{ base: "xl", md: "5xl" }}
-                    mx={1}
-                  >
-                    {Math.round(Math.round(city.main.temp - 273.15) * 1.8 + 32)}
-                    🌡
-                  </Text>
-                  <Text
-                    mt={{ base: 4, md: 2 }}
-                    fontSize={{ base: "xl", md: "5xl" }}
-                    mx={1}
-                  >
-                    {city.weather[0].description}
-                    {(city.weather[0].description === "clear sky") | "clear"
-                      ? "☀️"
-                      : "🌥"}
-                  </Text>
-                </Flex>
-              </Center>
+              <Flex justify={"center"} align={"center"} flexWrap="wrap">
+                <Text
+                  mt={{ base: 4, md: 2 }}
+                  fontSize={{ base: "xl", md: "4xl" }}
+                  mx={1}
+                >
+                  {city.name}
+                </Text>
+                <Text
+                  mt={{ base: 4, md: 2 }}
+                  fontSize={{ base: "xl", md: "4xl" }}
+                  mx={1}
+                >
+                  {Math.round(Math.round(city.main.temp - 273.15) * 1.8 + 32)}
+                  🌡
+                </Text>
+                <Text
+                  mt={{ base: 4, md: 2 }}
+                  fontSize={{ base: "xl", md: "4xl" }}
+                  mx={1}
+                >
+                  {city.weather[0].description}
+                  {(city.weather[0].description === "clear sky") | "clear"
+                    ? "☀️"
+                    : "🌥"}
+                </Text>
+              </Flex>
             </SwiperSlide>
           ))}
       </Swiper>

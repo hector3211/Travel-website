@@ -3,9 +3,9 @@ import { Box, SimpleGrid, Flex, Text, Image, Center } from "@chakra-ui/react";
 import carouselList from "./carouselList";
 export default function packages() {
   return (
-    <Box px={3}>
+    <Box id="packages" px={3}>
       <Center>
-        <Text py={3} fontWeight="bold" fontSize={{ base: "3xl", md: "5xl" }}>
+        <Text pb={3} fontWeight="bold" fontSize={{ base: "3xl", md: "5xl" }}>
           Packages
         </Text>
       </Center>
@@ -16,6 +16,9 @@ export default function packages() {
             direction="column"
             align="center"
             justify="center"
+            bgColor="gray.200"
+            p={5}
+            rounded={10}
           >
             <Image
               src={city.image}
@@ -24,23 +27,25 @@ export default function packages() {
               objectPosition="bottom"
               w="100%"
               h="300px"
-              rounded={10}
+              roundedTop={10}
             />
             <Flex
-              mt={2}
-              bgColor="gray.200"
               direction={"column"}
-              justify={"space-between"}
               alignItems={"center"}
-              p={5}
-              rounded={10}
+              p={2}
+              roundedBottom={10}
             >
-              <Text textAlign={"justify"} fontSize={"xl"} fontWeight={"thin"}>
+              <Text
+                p={3}
+                textAlign={"justify"}
+                fontSize={{ base: "md", md: "lg" }}
+                fontWeight={"thin"}
+              >
                 {city.description}
               </Text>
-              <Center>
-                <Text fontSize="lg">{city.price}</Text>
-              </Center>
+              <Flex mt={5} w="100%" justify={"end"}>
+                <Text fontSize="2xl">{city.price}</Text>
+              </Flex>
             </Flex>
           </Flex>
         ))}

@@ -2,12 +2,15 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Pagination } from "swiper";
+import "swiper/css/navigation";
+import { Pagination, Navigation } from "swiper";
 import { Box, Image, Center, Text } from "@chakra-ui/react";
+import CarouselList from "../components/carouselList";
 export default function carousel() {
   return (
     <Box
-      maxW={{ base: "100%", md: "100%" }}
+      id="places"
+      maxW={"100%"}
       pt={5}
       display={{ base: "block", md: "none" }}
     >
@@ -21,70 +24,27 @@ export default function carousel() {
         slidesPerView={1}
         spaceBetween={0}
         slidesPerGroup={1}
+        navigation={true}
         pagination={{
           clickable: true,
         }}
-        modules={[Pagination]}
+        modules={[Pagination, Navigation]}
         className="mySwiper"
       >
-        <SwiperSlide>
-          <Image
-            my={5}
-            rounded={3}
-            src="/images/gridsix.jpg"
-            alt="grid one photo"
-            objectFit={"cover"}
-            objectPosition="bottom"
-            w="100%"
-            h="400px"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image
-            my={5}
-            rounded={3}
-            src="/images/gridtwo.jpg"
-            alt="grid one photo"
-            objectFit={"cover"}
-            w="100%"
-            h="400px"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image
-            my={5}
-            rounded={3}
-            src="/images/gridseven.jpg"
-            alt="grid one photo"
-            objectFit={"cover"}
-            objectPosition="top"
-            w="100%"
-            h="400px"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image
-            my={5}
-            rounded={3}
-            src="/images/gridfour.jpg"
-            alt="grid one photo"
-            objectFit={"cover"}
-            w="100%"
-            h="400px"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image
-            my={5}
-            rounded={3}
-            src="/images/gridone.jpg"
-            alt="grid one photo"
-            objectFit={"cover"}
-            objectPosition="bottom"
-            w="100%"
-            h="400px"
-          />
-        </SwiperSlide>
+        {CarouselList.map((img) => (
+          <SwiperSlide key={img.id}>
+            <Image
+              my={5}
+              rounded={3}
+              src={img.image}
+              alt={`photo ${img.id}`}
+              objectFit={"cover"}
+              objectPosition="bottom"
+              w="100%"
+              h="400px"
+            />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </Box>
   );

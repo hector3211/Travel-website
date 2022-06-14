@@ -7,11 +7,16 @@ import { Box, Center, Image, Text } from "@chakra-ui/react";
 import CarouselList from "../components/carouselList";
 export default function carousel() {
   return (
-    <Box px={3} maxW={"100%"} display={{ base: "none", md: "block" }}>
+    <Box
+      id="places"
+      px={1}
+      maxW={"100%"}
+      display={{ base: "none", md: "block" }}
+    >
       <Swiper
         direction={"horizontal"}
         slidesPerView={3.3}
-        spaceBetween={20}
+        spaceBetween={10}
         slidesPerGroup={3}
         mousewheel={true}
         pagination={{
@@ -23,8 +28,7 @@ export default function carousel() {
         {CarouselList.map((img) => (
           <SwiperSlide key={img.id}>
             <Image
-              my={5}
-              rounded={3}
+              rounded={5}
               src={img.image}
               alt="grid one photo"
               objectFit={"cover"}
