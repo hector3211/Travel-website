@@ -9,7 +9,7 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import { StyledBox } from "../layouts/motion";
-export default function about() {
+export default function About() {
   return (
     <StyledBox delay={0.3}>
       <Flex

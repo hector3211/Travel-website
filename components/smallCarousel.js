@@ -6,7 +6,7 @@ import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper";
 import { Box, Image, Center, Text } from "@chakra-ui/react";
 import CarouselList from "../components/carouselList";
-export default function carousel() {
+export default function Carousel() {
   return (
     <Box
       id="places"

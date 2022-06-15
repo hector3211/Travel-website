@@ -6,7 +6,7 @@ import requests from "../components/requests";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Autoplay } from "swiper";
-export default function weather() {
+export default function Weather() {
   const [data, setData] = useState(null);
   const [weather, setWeather] = useState(false);
 

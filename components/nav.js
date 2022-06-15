@@ -12,7 +12,7 @@ import {
 import NextLink from "next/link";
 import { BiMenu } from "react-icons/bi";
 import React, { useState } from "react";
-export default function nav() {
+export default function Nav() {
   const [navbar, setNavBar] = useState(false);
   const changeBackground = () => {
     if (window.scrollY > 100) {

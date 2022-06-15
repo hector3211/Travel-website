@@ -2,7 +2,7 @@ import { Box, Flex, Button, Center, Link, Text } from "@chakra-ui/react";
 import { ScaleButton } from "../layouts/motion";
 import { useUser } from "@auth0/nextjs-auth0";
 import React from "react";
-export default function hero() {
+export default function Hero() {
   const { user } = useUser();
   if (user) {
     localStorage.setItem("user", user.nickname);

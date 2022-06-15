@@ -9,7 +9,7 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import { reviewlist } from "./reviewlist";
-export default function testimonials() {
+export default function Testimonials() {
   return (
     <Flex
       id="testimonials"

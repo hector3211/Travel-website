@@ -10,7 +10,7 @@ import {
 } from "@chakra-ui/react";
 import carouselList from "./carouselList";
 import { ScaleBox } from "../layouts/motion";
-export default function packages() {
+export default function Packages() {
   return (
     <Box id="packages" px={{ base: 1, md: 5 }}>
       <Center>
