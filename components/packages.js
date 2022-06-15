@@ -20,9 +20,8 @@ export default function packages() {
       </Center>
       <SimpleGrid py={10} columns={{ base: 1, md: 2, lg: 3 }} spacing={12}>
         {carouselList.map((city) => (
-          <ScaleBox>
+          <ScaleBox key={city.id}>
             <Flex
-              key={city.id}
               direction="column"
               align="center"
               justify="center"

@@ -7,6 +7,7 @@ import {
   Center,
   SimpleGrid,
 } from "@chakra-ui/react";
+import React from "react";
 import { StyledBox } from "../layouts/motion";
 export default function about() {
   return (

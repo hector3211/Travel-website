@@ -11,7 +11,7 @@ import {
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { BiMenu } from "react-icons/bi";
-import { useState } from "react";
+import React, { useState } from "react";
 export default function nav() {
   const [navbar, setNavBar] = useState(false);
   const changeBackground = () => {
