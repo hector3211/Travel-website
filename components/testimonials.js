@@ -29,7 +29,8 @@ export default function Testimonials() {
         direction={{ base: "column", md: "row" }}
         align="center"
         overflowX={{ md: "auto" }}
-        maxW={{ base: "100%", md: "90%" }}
+        maxW={{ base: "100%", md: "80%" }}
+        minH={{ base: "15rem", md: "25rem" }}
       >
         {reviewlist.map((review) => (
           <Flex
@@ -40,7 +41,7 @@ export default function Testimonials() {
             mx={2}
             my={{ base: 2, md: 5 }}
             shadow="lg"
-            minW={{ base: "100%", md: "40%" }}
+            minW={{ base: "100%", md: "45%" }}
           >
             <Avatar
               src={review.image}

@@ -43,6 +43,7 @@ export default function Nav() {
       <Flex>
         <Menu>
           <MenuButton
+            border={navbar ? "1px solid black" : "none"}
             bgColor={"transparent"}
             _hover={{ bgColor: "transparent" }}
             _active={{ border: "1px solid black" }}

@@ -10,10 +10,15 @@ export default function Carousel() {
     <Box
       id="places"
       px={2}
+      py={3}
       maxW={"100%"}
       display={{ base: "none", md: "block" }}
-      shadow="dark-lg"
     >
+      <Center>
+        <Text py={3} fontSize={{ base: "3xl", md: "5xl" }} fontWeight="bold">
+          Featured places
+        </Text>
+      </Center>
       <Swiper
         direction={"horizontal"}
         slidesPerView={3.3}

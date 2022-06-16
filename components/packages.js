@@ -9,7 +9,7 @@ import {
   Button,
 } from "@chakra-ui/react";
 import carouselList from "./carouselList";
-import { ScaleBox } from "../layouts/motion";
+import { ScaleButton } from "../layouts/motion";
 export default function Packages() {
   return (
     <Box id="packages" px={{ base: 1, md: 5 }}>
@@ -20,47 +20,48 @@ export default function Packages() {
       </Center>
       <SimpleGrid py={10} columns={{ base: 1, md: 2, lg: 3 }} spacing={12}>
         {carouselList.map((city) => (
-          <ScaleBox key={city.id}>
-            <Flex
-              direction="column"
-              align="center"
-              justify="center"
-              bgColor="gray.200"
-              p={3}
-              rounded={10}
-            >
-              <Image
-                src={city.image}
-                alt="grid one photo"
-                objectFit="cover"
-                objectPosition="bottom"
-                w="100%"
-                h="300px"
-                rounded={5}
-              />
-              <Flex direction={"column"} alignItems={"center"} p={2}>
-                <Text
-                  p={3}
-                  textAlign={"justify"}
-                  fontSize={{ base: "md", md: "lg" }}
-                  fontWeight={"thin"}
-                >
-                  {city.description}
-                </Text>
-                <Flex mt={5} w="100%" justify={"center"}>
+          <Flex
+            key={city.id}
+            direction="column"
+            align="center"
+            justify="center"
+            rounded={10}
+            shadow="dark-lg"
+          >
+            <Image
+              src={city.image}
+              alt="grid one photo"
+              objectFit="cover"
+              objectPosition="bottom"
+              w="100%"
+              h="300px"
+              roundedTop={10}
+            />
+            <Flex direction={"column"} alignItems={"center"} p={2}>
+              <Text
+                p={3}
+                textAlign={"justify"}
+                fontSize={{ base: "md", md: "lg" }}
+                fontWeight={"thin"}
+              >
+                {city.description}
+              </Text>
+              <Flex mt={5} w="100%" justify={"center"}>
+                <ScaleButton>
                   <Button
-                    border="1px solid #6C63FF"
-                    shadow="lg"
-                    w="100%"
+                    color="white"
+                    bgColor="#6C63FF"
+                    _hover={{ bgColor: "#5F57BD", textDecoration: "none" }}
+                    w="15rem"
                     size={"lg"}
-                    fontSize="2xl"
+                    fontSize="xl"
                   >
-                    {city.price}
+                    Book Now
                   </Button>
-                </Flex>
+                </ScaleButton>
               </Flex>
             </Flex>
-          </ScaleBox>
+          </Flex>
         ))}
       </SimpleGrid>
     </Box>

@@ -1,13 +1,35 @@
-import { Box, Flex, Button, Center, Link, Text, Icon } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Button,
+  Center,
+  Link,
+  Text,
+  Icon,
+  Modal,
+  ModalContent,
+  ModalOverlay,
+  ModalBody,
+  ModalHeader,
+  ModalCloseButton,
+  FormControl,
+  Input,
+  FormLabel,
+  useDisclosure,
+  ModalFooter,
+} from "@chakra-ui/react";
 import { ScaleButton } from "../layouts/motion";
 import { signInWithGoogle, signOutUser, auth } from "../firebase";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { FcGoogle } from "react-icons/fc";
+import { EmailIcon } from "@chakra-ui/icons";
 export default function Hero() {
   const [signIn, setSignIn] = useState(false);
   const [user, setUser] = useState(null);
   const router = useRouter();
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const initialRef = React.useRef(null);
   useEffect(() => {
     if (signIn) {
       setSignIn(true);
@@ -56,7 +78,7 @@ export default function Hero() {
       <Flex
         direction={"column"}
         minWidth={"100%"}
-        minH="15rem"
+        minH="20rem"
         position="absolute"
         align="center"
         justify="center"
@@ -66,7 +88,7 @@ export default function Hero() {
         rounded={10}
       >
         <Text fontSize={"3xl"} color="white">
-          Welcome {user}
+          Welcome {signIn && user}
         </Text>
         <Center>
           {signIn ? (
@@ -85,23 +107,64 @@ export default function Hero() {
               </Button>
             </ScaleButton>
           ) : (
-            <ScaleButton>
+            <Flex direction={"column"}>
+              <ScaleButton>
+                <Button
+                  my={3}
+                  width={"15rem"}
+                  height="4rem"
+                  color="white"
+                  bgColor={"#6C63FF"}
+                  _hover={{ bgColor: "#5F57BD" }}
+                  size="lg"
+                  mt={{ base: 3, md: 1 }}
+                  onClick={handleGoogle}
+                >
+                  <Icon boxSize={"9"} as={FcGoogle} />
+                  Login with Google
+                </Button>
+              </ScaleButton>
+              <ScaleButton>
+                <Button
+                  width={"15rem"}
+                  height="4rem"
+                  color="white"
+                  bgColor={"#6C63FF"}
+                  _hover={{ bgColor: "#5F57BD" }}
+                  size="lg"
+                  mt={{ base: 3, md: 1 }}
+                  onClick={onOpen}
+                >
+                  <Icon boxSize={10} as={EmailIcon} pr={3} />
+                  Login with Email
+                </Button>
+              </ScaleButton>
+            </Flex>
+          )}
+        </Center>
+        <Modal initialFocusRef={initialRef} isOpen={isOpen} onClose={onClose}>
+          <ModalOverlay />
+          <ModalContent>
+            <ModalHeader>Please Sign up</ModalHeader>
+            <ModalCloseButton />
+            <ModalBody pb={6}>
+              <FormControl>
+                <FormLabel>Email</FormLabel>
+                <Input ref={initialRef} type="email" />
+              </FormControl>
+            </ModalBody>
+            <ModalFooter>
               <Button
-                width={"15rem"}
-                height="4rem"
                 color="white"
                 bgColor={"#6C63FF"}
                 _hover={{ bgColor: "#5F57BD" }}
                 size="lg"
-                mt={{ base: 3, md: 1 }}
-                onClick={handleGoogle}
               >
-                <Icon boxSize={"9"} as={FcGoogle} />
-                Login with Google
+                Submit
               </Button>
-            </ScaleButton>
-          )}
-        </Center>
+            </ModalFooter>
+          </ModalContent>
+        </Modal>
       </Flex>
     </Box>
   );
