@@ -1,9 +1,9 @@
-import { Box, Flex, Button, Center, Link, Text } from "@chakra-ui/react";
+import { Box, Flex, Button, Center, Link, Text, Icon } from "@chakra-ui/react";
 import { ScaleButton } from "../layouts/motion";
 import { signInWithGoogle, signOutUser, auth } from "../firebase";
-import { onAuthStateChanged } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { FcGoogle } from "react-icons/fc";
 export default function Hero() {
   const [signIn, setSignIn] = useState(false);
   const [user, setUser] = useState(null);
@@ -72,7 +72,7 @@ export default function Hero() {
           {signIn ? (
             <ScaleButton>
               <Button
-                width={"12rem"}
+                width={"15rem"}
                 height="4rem"
                 color="white"
                 bgColor={"#6C63FF"}
@@ -87,7 +87,7 @@ export default function Hero() {
           ) : (
             <ScaleButton>
               <Button
-                width={"12rem"}
+                width={"15rem"}
                 height="4rem"
                 color="white"
                 bgColor={"#6C63FF"}
@@ -96,7 +96,8 @@ export default function Hero() {
                 mt={{ base: 3, md: 1 }}
                 onClick={handleGoogle}
               >
-                Login
+                <Icon boxSize={"9"} as={FcGoogle} />
+                Login with Google
               </Button>
             </ScaleButton>
           )}
