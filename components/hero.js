@@ -1,12 +1,45 @@
 import { Box, Flex, Button, Center, Link, Text } from "@chakra-ui/react";
 import { ScaleButton } from "../layouts/motion";
-import { useUser } from "@auth0/nextjs-auth0";
-import React from "react";
+import { signInWithGoogle, signOutUser, auth } from "../firebase";
+import { onAuthStateChanged } from "firebase/auth";
+import React, { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 export default function Hero() {
-  const { user } = useUser();
-  if (user) {
-    localStorage.setItem("user", user.nickname);
-  }
+  const [signIn, setSignIn] = useState(false);
+  const [user, setUser] = useState(null);
+  const router = useRouter();
+  useEffect(() => {
+    if (signIn) {
+      setSignIn(true);
+    } else {
+      setSignIn(false);
+    }
+  }, [signIn]);
+  const handleGoogle = () => {
+    signInWithGoogle()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        localStorage.setItem("user", user.displayName.split(" ")[0]);
+        setUser(localStorage.getItem("user", user.displayName.split(" ")[0]));
+        setSignIn(true);
+        router.push("/");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+  const handleSignOut = () => {
+    signOutUser()
+      .then(() => {
+        localStorage.removeItem("user");
+        setSignIn(false);
+        router.push("/");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
     <Box position="relative">
       <Box
@@ -32,49 +65,40 @@ export default function Hero() {
         p={5}
         rounded={10}
       >
-        {user && (
-          <Flex align="center" w="100%" justify={"center"}>
-            <Text fontSize={"2xl"} color="white">
-              Welcome
-            </Text>
-            <Text ml={5} fontSize={{ base: "xl", md: "4xl" }} color="white">
-              {user.nickname}
-            </Text>
-          </Flex>
-        )}
+        <Text fontSize={"3xl"} color="white">
+          Welcome {user}
+        </Text>
         <Center>
-          {user ? (
-            <Link textDecoration={"none"} href="/api/auth/logout">
-              <ScaleButton>
-                <Button
-                  width={"12rem"}
-                  height="4rem"
-                  color="white"
-                  bgColor={"#6C63FF"}
-                  _hover={{ bgColor: "#5F57BD", textDecoration: "none" }}
-                  size="lg"
-                  mt={{ base: 3, md: 1 }}
-                >
-                  Logout
-                </Button>
-              </ScaleButton>
-            </Link>
+          {signIn ? (
+            <ScaleButton>
+              <Button
+                width={"12rem"}
+                height="4rem"
+                color="white"
+                bgColor={"#6C63FF"}
+                _hover={{ bgColor: "#5F57BD", textDecoration: "none" }}
+                size="lg"
+                mt={{ base: 3, md: 1 }}
+                onClick={handleSignOut}
+              >
+                Logout
+              </Button>
+            </ScaleButton>
           ) : (
-            <Link textDecoration={"none"} href="/api/auth/login">
-              <ScaleButton>
-                <Button
-                  width={"12rem"}
-                  height="4rem"
-                  color="white"
-                  bgColor={"#6C63FF"}
-                  _hover={{ bgColor: "#5F57BD" }}
-                  size="lg"
-                  mt={{ base: 3, md: 1 }}
-                >
-                  Login
-                </Button>
-              </ScaleButton>
-            </Link>
+            <ScaleButton>
+              <Button
+                width={"12rem"}
+                height="4rem"
+                color="white"
+                bgColor={"#6C63FF"}
+                _hover={{ bgColor: "#5F57BD" }}
+                size="lg"
+                mt={{ base: 3, md: 1 }}
+                onClick={handleGoogle}
+              >
+                Login
+              </Button>
+            </ScaleButton>
           )}
         </Center>
       </Flex>
