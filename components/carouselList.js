@@ -1,54 +1,33 @@
-import React from "react";
+// our Carousel data for our CarouselList component
 
 const carouselList = [
   {
     id: 1,
-    image: "/images/gridsix.jpg",
-    price: "$1500",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut consequat. laborum.",
+    image: "/images/iconone.svg",
   },
   {
     id: 2,
-    image: "/images/gridtwo.jpg",
-    price: "$1500",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut consequat.  laborum.",
+    image: "/images/icontwo.svg",
   },
   {
     id: 3,
-    image: "/images/gridseven.jpg",
-    price: "$1500",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut consequat. laborum.",
+    image: "/images/iconthree.svg",
   },
   {
     id: 4,
-    image: "/images/gridfour.jpg",
-    price: "$1500",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut consequat.",
+    image: "/images/iconfour.svg",
   },
   {
     id: 5,
-    image: "/images/gridone.jpg",
-    price: "$1500",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut consequat.  laborum.",
+    image: "/images/iconfive.svg",
   },
   {
     id: 6,
-    image: "/images/gridfive.jpg",
-    price: "$1500",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut consequat.laborum.",
+    image: "/images/icontwo.svg",
   },
   {
     id: 7,
-    image: "/images/gridthree.jpg",
-    price: "$1500",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut consequat. t laborum.",
+    image: "/images/iconthree.svg",
   },
 ];
 

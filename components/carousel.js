@@ -2,45 +2,47 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Mousewheel, Pagination } from "swiper";
+import "swiper/css/navigation";
+import { Autoplay } from "swiper";
 import { Box, Center, Image, Text } from "@chakra-ui/react";
 import CarouselList from "../components/carouselList";
+
 export default function Carousel() {
   return (
     <Box
-      id="places"
+      id="partners"
       px={2}
       py={3}
       maxW={"100%"}
       display={{ base: "none", md: "block" }}
+      position={"relative"}
     >
       <Center>
         <Text py={3} fontSize={{ base: "3xl", md: "5xl" }} fontWeight="bold">
-          Featured places
+          Our Partners
         </Text>
       </Center>
       <Swiper
         direction={"horizontal"}
-        slidesPerView={3.3}
+        slidesPerView={4.2}
         spaceBetween={10}
-        slidesPerGroup={3}
-        mousewheel={true}
-        pagination={{
-          clickable: true,
+        slidesPerGroup={4}
+        autoplay={{
+          delay: 1500,
+          disableOnInteraction: false,
         }}
-        modules={[Mousewheel, Pagination]}
+        modules={[Autoplay]}
         className="mySwiper"
       >
         {CarouselList.map((img) => (
           <SwiperSlide key={img.id}>
             <Image
-              rounded={5}
               src={img.image}
-              alt="grid one photo"
-              objectFit={"cover"}
+              alt={`photo ${img.id}`}
+              objectFit={"coontain"}
               objectPosition={"bottom"}
               w="100%"
-              h="400px"
+              h="200px"
             />
           </SwiperSlide>
         ))}

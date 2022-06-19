@@ -7,6 +7,7 @@ import SmallCarousel from "../components/smallCarousel";
 import Testimonials from "../components/testimonials";
 import Weather from "../components/weather";
 import Packages from "../components/packages";
+
 export default function Home() {
   return (
     <Box>

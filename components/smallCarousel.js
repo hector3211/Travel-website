@@ -3,45 +3,44 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { Pagination, Navigation } from "swiper";
+import { Autoplay } from "swiper";
 import { Box, Image, Center, Text } from "@chakra-ui/react";
 import CarouselList from "../components/carouselList";
+// SmallCarousel is a component that display when is mobile view compared to its big brother that only appears in meduim view and larger
 export default function Carousel() {
   return (
     <Box
-      id="places"
+      id="partners"
       maxW={"100%"}
-      pt={5}
+      py={10}
       display={{ base: "block", md: "none" }}
     >
       <Center>
         <Text fontSize={"4xl"} fontWeight="bold">
-          Featured places
+          Our Partners
         </Text>
       </Center>
       <Swiper
         direction={"horizontal"}
-        slidesPerView={1}
+        slidesPerView={3}
         spaceBetween={0}
         slidesPerGroup={1}
-        navigation={true}
-        pagination={{
-          clickable: true,
+        autoplay={{
+          delay: 500,
+          disableOnInteraction: false,
         }}
-        modules={[Pagination, Navigation]}
+        modules={[Autoplay]}
         className="mySwiper"
       >
         {CarouselList.map((img) => (
           <SwiperSlide key={img.id}>
             <Image
-              my={5}
-              rounded={3}
               src={img.image}
               alt={`photo ${img.id}`}
-              objectFit={"cover"}
+              objectFit={"contain"}
               objectPosition="bottom"
               w="100%"
-              h="400px"
+              h="150px"
             />
           </SwiperSlide>
         ))}

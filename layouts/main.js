@@ -1,7 +1,7 @@
 import { Box } from "@chakra-ui/react";
 import Head from "next/head";
 import React from "react";
-
+// main layout for project
 export default function main({ children }) {
   return (
     <Box as="main" minheight="100vh">

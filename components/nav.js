@@ -12,8 +12,10 @@ import {
 import NextLink from "next/link";
 import { BiMenu } from "react-icons/bi";
 import React, { useState } from "react";
+
 export default function Nav() {
   const [navbar, setNavBar] = useState(false);
+  // this function will toggle (setNavBar) when user scrolls down to a certain point causing the narbar color to change
   const changeBackground = () => {
     if (window.scrollY > 100) {
       setNavBar(true);
@@ -64,8 +66,8 @@ export default function Nav() {
               </NextLink>
             </MenuItem>
             <MenuItem>
-              <NextLink href="#places" passHref>
-                <Link w="100%">Featured Places</Link>
+              <NextLink href="#partners" passHref>
+                <Link w="100%">Partners</Link>
               </NextLink>
             </MenuItem>
             <MenuItem>

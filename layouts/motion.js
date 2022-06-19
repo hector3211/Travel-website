@@ -1,16 +1,16 @@
+// framer motion styled sections
 import { motion, isValidMotionProp } from "framer-motion";
 import { chakra } from "@chakra-ui/react";
-const ChakraBox = chakra(motion.div, {
+export const ChakraBox = chakra(motion.div, {
   shouldForwardProp: (prop) => isValidMotionProp(prop) || prop === "children",
 });
 
 export const StyledBox = ({ children, delay = 0 }) => {
   return (
     <ChakraBox
-      initial={{ width: "0" }}
-      animate={{ width: "100%" }}
-      transition={{ type: "spring", duration: 0.8, delay }}
-      viewport={{ once: true }}
+      initial={{ y: 20 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.8, delay }}
     >
       {children}
     </ChakraBox>
@@ -25,9 +25,18 @@ export const ScaleButton = ({ children }) => {
   );
 };
 
-export const ScaleBox = ({ children }) => {
+export const StyledSection = ({ children }) => {
   return (
-    <ChakraBox whileHover={{ scale: 1.1, cursor: "pointer" }}>
+    <ChakraBox
+      initial={{ y: -20 }}
+      animate={{ y: 0 }}
+      transition={{
+        type: "spring",
+        stiffness: 100,
+        duration: 0.8,
+        delay: 0.3,
+      }}
+    >
       {children}
     </ChakraBox>
   );

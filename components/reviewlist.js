@@ -1,3 +1,4 @@
+// Testimonial data from components/testimonials.js:
 export const reviewlist = [
   {
     id: 1,
