@@ -1,12 +1,4 @@
-import {
-  Box,
-  Center,
-  Flex,
-  Text,
-  Image,
-  Avatar,
-  SimpleGrid,
-} from "@chakra-ui/react";
+import { Flex, Text, Avatar, useColorModeValue } from "@chakra-ui/react";
 import React from "react";
 import { reviewlist } from "./reviewlist";
 export default function Testimonials() {
@@ -35,8 +27,8 @@ export default function Testimonials() {
         {reviewlist.map((review) => (
           <Flex
             key={review.id}
+            bgColor={useColorModeValue("gray.200", "gray.600")}
             rounded={10}
-            bgColor="gray.100"
             p={5}
             mx={2}
             my={{ base: 2, md: 5 }}

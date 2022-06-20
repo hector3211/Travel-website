@@ -152,15 +152,15 @@ export default function Hero() {
         sx={{ aspectRatio: "16/9" }}
       />
       <Flex
-        direction={"column"}
+        minW={{ base: "100%", md: "20rem" }}
+        direction="column"
         minH="20rem"
         position="absolute"
         align="center"
         justify="center"
-        right={{ base: "6%", md: "10%" }}
+        right={{ base: 0, md: "10%" }}
         top="35%"
         p={5}
-        rounded={10}
       >
         <Text fontSize={"3xl"} color="white">
           Welcome {signIn && user}

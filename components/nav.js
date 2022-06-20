@@ -12,6 +12,7 @@ import {
 import NextLink from "next/link";
 import { BiMenu } from "react-icons/bi";
 import React, { useState } from "react";
+import ToggleTheme from "./toggletheme";
 
 export default function Nav() {
   const [navbar, setNavBar] = useState(false);
@@ -43,6 +44,7 @@ export default function Nav() {
     >
       <Text fontSize={navbar ? "3xl" : "4xl"}>Travel</Text>
       <Flex>
+        <ToggleTheme />
         <Menu>
           <MenuButton
             border={navbar ? "1px solid black" : "none"}
