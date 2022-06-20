@@ -1,7 +1,7 @@
 import { Flex, Text, Avatar, useColorModeValue } from "@chakra-ui/react";
 import React from "react";
 import { reviewlist } from "./reviewlist";
-export default function Testimonials() {
+export default function testimonials() {
   return (
     <Flex
       id="testimonials"
