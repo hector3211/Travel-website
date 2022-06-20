@@ -17,6 +17,8 @@ import {
   useDisclosure,
   ModalFooter,
   useToast,
+  useColorModeValue,
+  Divider,
 } from "@chakra-ui/react";
 import { ScaleButton } from "../layouts/motion";
 import { signInWithGoogle, signOutUser, auth } from "../firebase";
@@ -30,9 +32,8 @@ import { useRouter } from "next/router";
 import { FcGoogle } from "react-icons/fc";
 import { EmailIcon } from "@chakra-ui/icons";
 // Start of Hero component
-export default function Hero() {
+export default function Hero({ signIn, isSignedIn }) {
   // states
-  const [signIn, setSignIn] = useState(false);
   const [user, setUser] = useState("");
   const [email, setEmail] = useState("");
   const router = useRouter();
@@ -58,10 +59,18 @@ export default function Hero() {
           const user = result.user;
           console.log(user);
           const name = user.displayName;
-          const email = user.email;
+          const profilePic = user.photoURL;
           localStorage.setItem("user", name.split(" ")[0]);
           setUser(localStorage.getItem("user"));
-          setSignIn(true);
+          localStorage.setItem("profilePic", profilePic);
+
+          isSignedIn(true);
+          toast({
+            title: `Successfully signed in as ${name}`,
+            status: "success",
+            duration: 9000,
+            isClosable: true,
+          });
         })
         .catch((error) => {
           console.log(error.message);
@@ -76,7 +85,9 @@ export default function Hero() {
         console.log(user);
         localStorage.setItem("user", user.displayName.split(" ")[0]);
         setUser(localStorage.getItem("user", user.displayName.split(" ")[0]));
-        setSignIn(true);
+        localStorage.setItem("profilePic", user.photoURL);
+
+        isSignedIn(true);
         router.push("/");
       })
       .catch((error) => {
@@ -88,7 +99,8 @@ export default function Hero() {
     signOutUser()
       .then(() => {
         localStorage.removeItem("user");
-        setSignIn(false);
+
+        isSignedIn(false);
         router.push("/");
       })
       .catch((error) => {
@@ -152,33 +164,34 @@ export default function Hero() {
         sx={{ aspectRatio: "16/9" }}
       />
       <Flex
-        minW={{ base: "100%", md: "20rem" }}
+        border={useColorModeValue("1px solid black", "1px solid white")}
+        minW={{ base: "90%", md: "23rem" }}
         direction="column"
-        minH="20rem"
+        minH="15rem"
         position="absolute"
         align="center"
         justify="center"
         right={{ base: 0, md: "10%" }}
         top="35%"
         p={5}
+        mx={{ base: 5, md: 0 }}
+        rounded={10}
+        backdropFilter="auto"
+        backdropBlur="8px"
       >
-        <Text fontSize={"3xl"} color="white">
-          Welcome {signIn && user}
-        </Text>
         <Center>
           {signIn ? (
             <ScaleButton>
               <Button
                 width={"15rem"}
                 height="4rem"
-                color="white"
                 bgColor={"#6C63FF"}
                 _hover={{ bgColor: "#5F57BD", textDecoration: "none" }}
                 size="lg"
                 mt={{ base: 3, md: 1 }}
                 onClick={handleSignOut}
               >
-                Logout
+                <Text fontSize={"xl"}>log Out</Text>
               </Button>
             </ScaleButton>
           ) : (
@@ -188,7 +201,6 @@ export default function Hero() {
                   my={3}
                   width={"18rem"}
                   height="4rem"
-                  color="white"
                   bgColor={"#6C63FF"}
                   _hover={{ bgColor: "#5F57BD" }}
                   size="lg"
@@ -196,14 +208,18 @@ export default function Hero() {
                   onClick={handleGoogle}
                 >
                   <Icon boxSize={10} as={FcGoogle} />
-                  <Text fontSize={"2xl"}>Login with Google</Text>
+                  <Text fontSize={"xl"}>Login with Google</Text>
                 </Button>
               </ScaleButton>
+              <Flex justify={"space-between"} align="center">
+                <Divider />
+                <Text px={3}>Or</Text>
+                <Divider />
+              </Flex>
               <ScaleButton>
                 <Button
                   width={"18rem"}
                   height="4rem"
-                  color="white"
                   bgColor={"#6C63FF"}
                   _hover={{ bgColor: "#5F57BD" }}
                   size="lg"
@@ -211,7 +227,7 @@ export default function Hero() {
                   onClick={onOpen}
                 >
                   <Icon boxSize={10} as={EmailIcon} pr={3} />
-                  <Text fontSize={"2xl"}>Log in with email</Text>
+                  <Text fontSize={"xl"}>Log in with email</Text>
                 </Button>
               </ScaleButton>
             </Flex>

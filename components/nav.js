@@ -8,14 +8,17 @@ import {
   MenuButton,
   MenuItem,
   MenuList,
+  useColorModeValue,
+  Avatar,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { BiMenu } from "react-icons/bi";
 import React, { useState } from "react";
 import ToggleTheme from "./toggletheme";
 
-export default function Nav() {
+export default function Nav({ isSignedIn }) {
   const [navbar, setNavBar] = useState(false);
+
   // this function will toggle (setNavBar) when user scrolls down to a certain point causing the narbar color to change
   const changeBackground = () => {
     if (window.scrollY > 100) {
@@ -39,15 +42,18 @@ export default function Nav() {
       position="fixed"
       width="100%"
       minHeight="0.5rem"
-      py={navbar ? 1 : 5}
+      py={navbar ? 1 : 8}
       px={{ base: 30, md: 20 }}
     >
       <Text fontSize={navbar ? "3xl" : "4xl"}>Travel</Text>
       <Flex>
+        {isSignedIn && (
+          <Avatar mr={3} size="md" src={localStorage.getItem("profilePic")} />
+        )}
         <ToggleTheme />
         <Menu>
           <MenuButton
-            border={navbar ? "1px solid black" : "none"}
+            border={useColorModeValue("1px solid black", "1px solid white")}
             bgColor={"transparent"}
             _hover={{ bgColor: "transparent" }}
             _active={{ border: "1px solid black" }}

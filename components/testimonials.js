@@ -27,7 +27,7 @@ export default function testimonials() {
         {reviewlist.map((review) => (
           <Flex
             key={review.id}
-            bgColor={useColorModeValue("gray.200", "gray.600")}
+            bgColor={useColorModeValue("gray.200", "gray.500")}
             rounded={10}
             p={5}
             mx={2}

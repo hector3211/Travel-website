@@ -7,12 +7,13 @@ import SmallCarousel from "../components/smallCarousel";
 import Testimonials from "../components/testimonials";
 import Weather from "../components/weather";
 import Packages from "../components/packages";
-
+import React, { useState } from "react";
 export default function Home() {
+  const [isSignedIn, setIsSignedIn] = useState(false);
   return (
     <Box>
-      <Nav />
-      <Hero />
+      <Nav isSignedIn={isSignedIn} />
+      <Hero isSignedIn={setIsSignedIn} signIn={isSignedIn} />
       <Weather />
       <About />
       <Carousel />

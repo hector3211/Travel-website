@@ -10,6 +10,7 @@ import {
 } from "@chakra-ui/react";
 import { PackagesList } from "./PackagesList";
 import { ScaleButton } from "../layouts/motion";
+
 export default function Packages() {
   return (
     <Box id="packages" px={{ base: 3, md: 5 }}>
@@ -39,14 +40,7 @@ export default function Packages() {
             />
             <Flex direction={"column"} alignItems={"center"} p={2}>
               <Text fontSize={{ base: "2xl", md: "3xl" }}>{city.name}</Text>
-              <Text
-                p={3}
-                textAlign={"justify"}
-                fontSize={{ base: "lg", md: "xl" }}
-                fontWeight={"thin"}
-              >
-                {city.description}
-              </Text>
+
               <Flex my={3} w="100%" justify={"center"}>
                 <ScaleButton>
                   <Button

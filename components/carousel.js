@@ -24,8 +24,8 @@ export default function Carousel() {
       </Center>
       <Swiper
         direction={"horizontal"}
-        slidesPerView={4.2}
-        spaceBetween={10}
+        slidesPerView={6}
+        spaceBetween={2}
         slidesPerGroup={4}
         autoplay={{
           delay: 1500,

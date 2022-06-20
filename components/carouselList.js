@@ -29,6 +29,22 @@ const carouselList = [
     id: 7,
     image: "/images/iconthree.svg",
   },
+  {
+    id: 1,
+    image: "/images/iconfive.svg",
+  },
+  {
+    id: 2,
+    image: "/images/icontwo.svg",
+  },
+  {
+    id: 3,
+    image: "/images/iconone.svg",
+  },
+  {
+    id: 4,
+    image: "/images/iconfour.svg",
+  },
 ];
 
 export default carouselList;
