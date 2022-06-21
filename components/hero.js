@@ -62,13 +62,13 @@ export default function Hero({ signIn, isSignedIn }) {
           localStorage.setItem("user", user.displayName.split(" ")[0]);
           setUser(localStorage.getItem("user", user.displayName.split(" ")[0]));
           localStorage.setItem("profilePic", user.photoURL);
+          isSignedIn(true);
           toast({
             title: `Successfully signed in as ${name}`,
             status: "success",
             duration: 9000,
             isClosable: true,
           });
-          isSignedIn(true);
         })
         .catch((error) => {
           console.log(error.message);
@@ -85,14 +85,14 @@ export default function Hero({ signIn, isSignedIn }) {
         localStorage.setItem("user", user.displayName.split(" ")[0]);
         setUser(localStorage.getItem("user", user.displayName.split(" ")[0]));
         localStorage.setItem("profilePic", user.photoURL);
+        isSignedIn(true);
+        router.push("/");
         toast({
           title: `Successfully signed in as ${name}`,
           status: "success",
           duration: 9000,
           isClosable: true,
         });
-        isSignedIn(true);
-        router.push("/");
       })
       .catch((error) => {
         console.log(error);
@@ -175,9 +175,7 @@ export default function Hero({ signIn, isSignedIn }) {
         sx={{ aspectRatio: "16/9" }}
       />
       <Flex
-        border={
-          !signIn && useColorModeValue("1px solid black", "1px solid white")
-        }
+        border={!signIn && "1px solid white"}
         minW={{ base: "90%", md: "23rem" }}
         direction="column"
         minH="15rem"
@@ -211,6 +209,7 @@ export default function Hero({ signIn, isSignedIn }) {
             <Flex direction={"column"}>
               <ScaleButton>
                 <Button
+                  color="white"
                   my={3}
                   width={"18rem"}
                   height="4rem"
@@ -226,11 +225,14 @@ export default function Hero({ signIn, isSignedIn }) {
               </ScaleButton>
               <Flex justify={"space-between"} align="center">
                 <Divider />
-                <Text px={3}>Or</Text>
+                <Text color="white" px={3}>
+                  Or
+                </Text>
                 <Divider />
               </Flex>
               <ScaleButton>
                 <Button
+                  color="white"
                   width={"18rem"}
                   height="4rem"
                   bgColor={"#6C63FF"}
