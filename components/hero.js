@@ -57,19 +57,18 @@ export default function Hero({ signIn, isSignedIn }) {
         .then((result) => {
           localStorage.removeItem("emailForSignIn");
           const user = result.user;
-          console.log(user);
           const name = user.displayName;
-          const profilePic = user.photoURL;
-          localStorage.setItem("user", name.split(" ")[0]);
-          setUser(localStorage.getItem("user"));
-          localStorage.setItem("profilePic", profilePic);
-          isSignedIn(true);
+          console.log(user);
+          localStorage.setItem("user", user.displayName.split(" ")[0]);
+          setUser(localStorage.getItem("user", user.displayName.split(" ")[0]));
+          localStorage.setItem("profilePic", user.photoURL);
           toast({
             title: `Successfully signed in as ${name}`,
             status: "success",
             duration: 9000,
             isClosable: true,
           });
+          isSignedIn(true);
         })
         .catch((error) => {
           console.log(error.message);
@@ -92,7 +91,6 @@ export default function Hero({ signIn, isSignedIn }) {
           duration: 9000,
           isClosable: true,
         });
-
         isSignedIn(true);
         router.push("/");
       })
