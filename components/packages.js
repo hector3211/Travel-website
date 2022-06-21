@@ -40,7 +40,13 @@ export default function Packages() {
             />
             <Flex direction={"column"} alignItems={"center"} p={2}>
               <Text fontSize={{ base: "2xl", md: "3xl" }}>{city.name}</Text>
-
+              <Text
+                px={5}
+                fontSize={{ base: "lg", md: "xl" }}
+                textAlign="justify"
+              >
+                {city.description}
+              </Text>
               <Flex my={3} w="100%" justify={"center"}>
                 <ScaleButton>
                   <Button

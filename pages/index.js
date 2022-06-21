@@ -8,10 +8,11 @@ import Testimonials from "../components/testimonials";
 import Weather from "../components/weather";
 import Packages from "../components/packages";
 import React, { useState } from "react";
+import { StyledBox } from "../layouts/motion";
 export default function Home() {
   const [isSignedIn, setIsSignedIn] = useState(false);
   return (
-    <Box>
+    <StyledBox>
       <Nav isSignedIn={isSignedIn} />
       <Hero isSignedIn={setIsSignedIn} signIn={isSignedIn} />
       <Weather />
@@ -20,6 +21,6 @@ export default function Home() {
       <SmallCarousel />
       <Testimonials />
       <Packages />
-    </Box>
+    </StyledBox>
   );
 }

@@ -15,7 +15,7 @@ export default function testimonials() {
       </Text>
       <Flex
         rounded={10}
-        shadow={{ base: "none", md: "dark-lg" }}
+        shadow={{ base: "none", md: "first" }}
         py={10}
         px={5}
         direction={{ base: "column", md: "row" }}

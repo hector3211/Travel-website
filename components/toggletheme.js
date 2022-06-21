@@ -9,7 +9,7 @@ export default function ToggleTheme() {
       <IconButton
         size="md"
         mr={5}
-        colorScheme={useColorModeValue("blue", "yellow")}
+        colorScheme={useColorModeValue("blue", "orange")}
         icon={useColorModeValue(<MoonIcon />, <SunIcon />)}
         onClick={toggleColorMode}
       />

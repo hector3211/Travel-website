@@ -8,8 +8,8 @@ export const ChakraBox = chakra(motion.div, {
 export const StyledBox = ({ children, delay = 0 }) => {
   return (
     <ChakraBox
-      initial={{ y: 20 }}
-      animate={{ y: 0 }}
+      initial={{ y: -20, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, delay }}
     >
       {children}

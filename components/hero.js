@@ -63,7 +63,6 @@ export default function Hero({ signIn, isSignedIn }) {
           localStorage.setItem("user", name.split(" ")[0]);
           setUser(localStorage.getItem("user"));
           localStorage.setItem("profilePic", profilePic);
-
           isSignedIn(true);
           toast({
             title: `Successfully signed in as ${name}`,
@@ -82,10 +81,17 @@ export default function Hero({ signIn, isSignedIn }) {
     signInWithGoogle()
       .then((result) => {
         const user = result.user;
+        const name = user.displayName;
         console.log(user);
         localStorage.setItem("user", user.displayName.split(" ")[0]);
         setUser(localStorage.getItem("user", user.displayName.split(" ")[0]));
         localStorage.setItem("profilePic", user.photoURL);
+        toast({
+          title: `Successfully signed in as ${name}`,
+          status: "success",
+          duration: 9000,
+          isClosable: true,
+        });
 
         isSignedIn(true);
         router.push("/");
@@ -102,6 +108,12 @@ export default function Hero({ signIn, isSignedIn }) {
 
         isSignedIn(false);
         router.push("/");
+        toast({
+          title: `Successfully signed out`,
+          status: "success",
+          duration: 6000,
+          isClosable: true,
+        });
       })
       .catch((error) => {
         console.log(error);
@@ -128,7 +140,8 @@ export default function Hero({ signIn, isSignedIn }) {
           localStorage.setItem("emailForSignIn", email);
           // Chrak toast to display that the email link was sent
           toast({
-            title: `Link sent to ${email}, please check your email`,
+            title: `Link sent to your email`,
+            description: `Pleask check inbox or spam`,
             status: "success",
             duration: 9000,
             isClosable: true,
@@ -164,7 +177,9 @@ export default function Hero({ signIn, isSignedIn }) {
         sx={{ aspectRatio: "16/9" }}
       />
       <Flex
-        border={useColorModeValue("1px solid black", "1px solid white")}
+        border={
+          !signIn && useColorModeValue("1px solid black", "1px solid white")
+        }
         minW={{ base: "90%", md: "23rem" }}
         direction="column"
         minH="15rem"
@@ -176,14 +191,14 @@ export default function Hero({ signIn, isSignedIn }) {
         p={5}
         mx={{ base: 5, md: 0 }}
         rounded={10}
-        backdropFilter="auto"
-        backdropBlur="8px"
+        backdropFilter={!signIn && "auto"}
+        backdropBlur={!signIn && "8px"}
       >
         <Center>
           {signIn ? (
             <ScaleButton>
               <Button
-                width={"15rem"}
+                width={"8rem"}
                 height="4rem"
                 bgColor={"#6C63FF"}
                 _hover={{ bgColor: "#5F57BD", textDecoration: "none" }}

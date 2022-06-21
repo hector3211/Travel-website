@@ -23,27 +23,27 @@ const carouselList = [
   },
   {
     id: 6,
-    image: "/images/icontwo.svg",
-  },
-  {
-    id: 7,
-    image: "/images/iconthree.svg",
-  },
-  {
-    id: 1,
-    image: "/images/iconfive.svg",
-  },
-  {
-    id: 2,
-    image: "/images/icontwo.svg",
-  },
-  {
-    id: 3,
     image: "/images/iconone.svg",
   },
   {
-    id: 4,
+    id: 7,
+    image: "/images/icontwo.svg",
+  },
+  {
+    id: 8,
+    image: "/images/iconthree.svg",
+  },
+  {
+    id: 9,
     image: "/images/iconfour.svg",
+  },
+  {
+    id: 10,
+    image: "/images/iconfive.svg",
+  },
+  {
+    id: 11,
+    image: "/images/iconone.svg",
   },
 ];
 

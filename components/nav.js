@@ -48,7 +48,7 @@ export default function Nav({ isSignedIn }) {
       <Text fontSize={navbar ? "3xl" : "4xl"}>Travel</Text>
       <Flex>
         {isSignedIn && (
-          <Avatar mr={3} size="md" src={localStorage.getItem("profilePic")} />
+          <Avatar mr={3} size={"md"} src={localStorage.getItem("profilePic")} />
         )}
         <ToggleTheme />
         <Menu>

@@ -24,7 +24,7 @@ export default function Weather() {
   }, []);
 
   return (
-    <Box color="white" maxH="10rem" bgColor="#6C63FF">
+    <Box maxH="10rem" shadow="first" bgColor="#6C63FF">
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -45,20 +45,20 @@ export default function Weather() {
                 flexWrap="no-wrap"
               >
                 <Text
-                  fontSize={{ base: "xl", md: "4xl" }}
+                  fontSize={{ base: "xl", md: "5xl" }}
                   mx={{ base: 1, md: 3 }}
                 >
                   {city.name}
                 </Text>
                 <Text
-                  fontSize={{ base: "xl", md: "4xl" }}
+                  fontSize={{ base: "xl", md: "5xl" }}
                   mx={{ base: 1, md: 3 }}
                 >
                   {Math.round(Math.round(city.main.temp - 273.15) * 1.8 + 32)}
                   🌡
                 </Text>
                 <Text
-                  fontSize={{ base: "xl", md: "4xl" }}
+                  fontSize={{ base: "xl", md: "5xl" }}
                   mx={{ base: 1, md: 3 }}
                 >
                   {city.weather[0].description}

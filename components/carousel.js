@@ -2,7 +2,6 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import "swiper/css/navigation";
 import { Autoplay } from "swiper";
 import { Box, Center, Image, Text } from "@chakra-ui/react";
 import CarouselList from "../components/carouselList";
@@ -15,7 +14,6 @@ export default function Carousel() {
       py={3}
       maxW={"100%"}
       display={{ base: "none", md: "block" }}
-      position={"relative"}
     >
       <Center>
         <Text py={3} fontSize={{ base: "3xl", md: "5xl" }} fontWeight="bold">
@@ -24,11 +22,11 @@ export default function Carousel() {
       </Center>
       <Swiper
         direction={"horizontal"}
-        slidesPerView={6}
+        slidesPerView={5}
         spaceBetween={2}
         slidesPerGroup={4}
         autoplay={{
-          delay: 1500,
+          delay: 1400,
           disableOnInteraction: false,
         }}
         modules={[Autoplay]}

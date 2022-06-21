@@ -12,7 +12,10 @@ const colors = {
   mainPurple: "#6C63FF",
   mainYellow: "#FFC655",
 };
+const shadows = {
+  first: "1px  1px 30px 1px black",
+};
 // 3. extend the theme
-const theme = extendTheme({ config, colors });
+const theme = extendTheme({ config, colors, shadows });
 
 export default theme;
