@@ -8,6 +8,8 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "author": "Hector Oropesa",
+  "license":"MIT",
   "dependencies": {
     "@auth0/nextjs-auth0": "^1.9.0",
     "@chakra-ui/icons": "^2.0.2",

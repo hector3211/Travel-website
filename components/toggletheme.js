@@ -5,7 +5,7 @@ import { MotionThemeButton } from "../layouts/motion";
 export default function ToggleTheme() {
   const { toggleColorMode } = useColorMode();
   return (
-    <MotionThemeButton key={useColorModeValue("light", "dark")}>
+    <MotionThemeButton>
       <IconButton
         size="md"
         mr={5}
